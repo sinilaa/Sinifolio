@@ -30,7 +30,7 @@ export default function LoginPage() {
 
   // Redirect to home page if redirect state is true
   if (redirect) {
-    return <Navigate to={'/'} />;
+    return <Navigate to={'/projects'} />;
   }
 
   // Render login form

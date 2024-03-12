@@ -36,8 +36,8 @@ export default function ProjectPage() {
         credentials: 'include',
       });
       if (response.ok) {
-        // Project deletion successful, navigate back to project list
-        navigate('/');
+        // Project deletion successful, navigate back to projects page
+        navigate('/projects');
       } else {
         console.error('Project deletion failed');
       }

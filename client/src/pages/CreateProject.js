@@ -30,9 +30,9 @@ export default function CreateProject() {
     }
   }
 
-  // Redirect to home page if redirect state is true
+  // Redirect to projects page if redirect state is true
   if (redirect) {
-    return <Navigate to={'/'} />;
+    return <Navigate to={'/projects'} />;
   }
 
   // Render form for creating a new project

@@ -8,6 +8,9 @@ import {UserContextProvider} from "./contexts/UserContext";
 import CreateProject from "./pages/CreateProject";
 import ProjectPage from "./pages/ProjectPage";
 import EditProject from "./pages/EditProject";
+import ContactPage from './pages/ContactPage';
+import AboutPage from './pages/AboutPage';
+import HomePage from './pages/HomePage';
 
 function App() {
   return (
@@ -16,11 +19,14 @@ function App() {
     <UserContextProvider>
       <Routes>
         <Route path="/" element={<Layout />}>
-          <Route index element={<ProjectsPage />} />
+          <Route index element={<HomePage/>} />
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/projects" element={<ProjectsPage />} />
+          <Route path="/project/:id" element={<ProjectPage />} />
+          <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
           <Route path="/register" element={<RegisterPage />} />
           <Route path="/create" element={<CreateProject />} />
-          <Route path="/project/:id" element={<ProjectPage />} />
           <Route path="/edit/:id" element={<EditProject />} />
         </Route>
       </Routes>

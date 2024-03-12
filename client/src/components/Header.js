@@ -36,13 +36,18 @@ export default function Header() {
       <nav>
         {username ? (
           <>
+            <Link to= "/about">About</Link>
+            <Link to="/contact">Contact</Link>
+            <Link to="/projects">Projects</Link>
             <Link to="/create">Create new project</Link>
             <a onClick={logout}>Logout ({username})</a>
           </>
         ) : (
-          <>
+          <>    
+            <Link to="/about">About</Link>
+            <Link to="/projects">Projects</Link>
+            <Link to="/contact">Contact</Link>
             <Link to="/login">Login</Link>
-            <Link to="/register">Register</Link>
           </>
         )}
       </nav>
