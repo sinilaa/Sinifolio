@@ -37,25 +37,31 @@ export default function CreateProject() {
 
   // Render form for creating a new project
   return (
-    <form onSubmit={createNewProject}>
-      <input
-        type="title"
-        placeholder={'Title'}
-        value={title}
-        onChange={ev => setTitle(ev.target.value)}
-      />
-      <input
-        type="summary"
-        placeholder={'Summary'}
-        value={summary}
-        onChange={ev => setSummary(ev.target.value)}
-      />
-      <input
-        type="file"
-        onChange={ev => setFiles(ev.target.files)}
-      />
-      <Editor value={content} onChange={setContent} />
-      <button style={{ marginTop: '5px' }}>Create project</button>
-    </form>
+    <main className="main-content">
+      <div className="content-wrapper">
+        <div className="main container">
+          <form onSubmit={createNewProject} className="editor">
+            <input
+              type="title"
+              placeholder={'Title'}
+              value={title}
+              onChange={ev => setTitle(ev.target.value)}
+            />
+            <input
+              type="summary"
+              placeholder={'Summary'}
+              value={summary}
+              onChange={ev => setSummary(ev.target.value)}
+            />
+            <input
+              type="file"
+              onChange={ev => setFiles(ev.target.files)}
+            />
+            <Editor value={content} onChange={setContent} />
+            <button style={{ marginTop: '5px' }}>Create</button>
+          </form>
+        </div>
+      </div>
+    </main>
   );
 }

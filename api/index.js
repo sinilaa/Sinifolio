@@ -8,8 +8,9 @@ const app = express();
 const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
-const uploadMiddleware = multer({ dest: 'uploads/' });
 const fs = require('fs');
+
+const uploadMiddleware = multer({ dest: 'uploads/' });
 
 // Add CORS middleware and specify allowed origins
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));

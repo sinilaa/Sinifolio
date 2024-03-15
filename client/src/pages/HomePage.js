@@ -2,9 +2,9 @@ import React from "react";
 
 export default function HomePage() {
   return (
-    <main className="main">
-      <div className="section">
-        <div className="content container">
+    <main className="main-content">
+      <div className="content-wrapper">
+        <div className="main container">
           <div className="main_title">
             <h1>
               Hey there!<br />

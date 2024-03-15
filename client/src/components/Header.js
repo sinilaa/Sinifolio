@@ -1,10 +1,24 @@
-import { Link } from "react-router-dom";
+import { useState } from "react";
+import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
+import { RiMenuLine, RiCloseLine } from '@remixicon/react';
 
 // Functional component representing the header of the application
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
+  const [showMenu, setShowMenu] = useState(false);
+  const navigate = useNavigate();
+  
+  const toggleMenu = () => {
+    setShowMenu(!showMenu);
+  };
+
+  const closeMenuOnMobile = () => {
+    if (window.innerWidth <= 1150) {
+      setShowMenu(false);
+    }
+  };
 
   // Fetch user profile information on component mount
   useEffect(() => {
@@ -22,8 +36,10 @@ export default function Header() {
     fetch('http://localhost:4000/logout', {
       credentials: 'include',
       method: 'POST',
-    });
+    }).then(() => {
     setUserInfo(null);
+    navigate('/');
+    });
   }
 
   // Get the username from user info if available
@@ -32,24 +48,52 @@ export default function Header() {
   // Render the header with navigation links
   return (
     <header>
-      <Link to="/" className="logo">Logo</Link>
-      <nav>
+      <nav className="nav container">
+      <Link to="/" className="nav_logo">Logo</Link>
+      <div className={`nav_menu ${showMenu ? "show-menu" : ""}`} id="nav-menu">
+      <ul className="nav_list">
         {username ? (
           <>
-            <Link to= "/about">About</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/create">Create new project</Link>
-            <a onClick={logout}>Logout ({username})</a>
+            <li className="nav_item">
+              <Link to= "/about"className="nav_link" onClick={closeMenuOnMobile}>About</Link>
+            </li>
+            <li className="nav_item">
+              <Link to="/contact" className="nav_link" onClick={closeMenuOnMobile}>Contact</Link>
+            </li>
+            <li className="nav_item">
+              <Link to="/projects" className="nav_link" onClick={closeMenuOnMobile}>Projects</Link>
+            </li>
+            <li className="nav_item">
+              <Link to="/create" className="nav_link" onClick={closeMenuOnMobile}>Create project</Link>
+            </li>
+            <li className="nav_item">
+              <a onClick={() => {logout(); closeMenuOnMobile();}} className="nav_link">Logout ({username})</a>
+            </li>
           </>
         ) : (
           <>    
-            <Link to="/about">About</Link>
-            <Link to="/projects">Projects</Link>
-            <Link to="/contact">Contact</Link>
-            <Link to="/login">Login</Link>
+            <li className="nav_item">
+              <Link to= "/about"className="nav_link" onClick={closeMenuOnMobile}>About</Link>
+            </li>
+            <li className="nav_item">
+              <Link to="/contact" className="nav_link" onClick={closeMenuOnMobile}>Contact</Link>
+            </li>
+            <li className="nav_item">
+              <Link to="/projects" className="nav_link" onClick={closeMenuOnMobile}>Projects</Link>
+            </li>
+            <li className="nav_item">
+            <Link to="/login" className="nav_link" onClick={closeMenuOnMobile}>Login</Link>
+            </li>
           </>
         )}
+        </ul>
+          <div className="nav_close" id="nav-close" onClick={toggleMenu}>
+            <RiCloseLine />
+          </div>
+        </div>
+          <div className="nav_toggle" id="nav-toggle" onClick={toggleMenu}>
+            <RiMenuLine />
+          </div>
       </nav>
     </header>
   );

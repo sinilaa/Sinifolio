@@ -19,9 +19,16 @@ export default function ProjectsPage() {
   // Render the list of projects
   return (
     <>
-      {projects.length > 0 && projects.map(project => (
-        <Project key={project.id} {...project} />
-      ))}
+      <main className="main-content">
+        <div className="content-wrapper">
+          <div className="main container">
+            <h1 className="title">Projects</h1>
+            {projects.length > 0 && projects.map(project => (
+              <Project key={project.id} {...project} />
+            ))}
+          </div>
+        </div>
+      </main>
     </>
   );
 }

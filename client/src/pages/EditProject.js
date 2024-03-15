@@ -57,25 +57,31 @@ export default function EditProject() {
 
   // Render form for updating project
   return (
-    <form onSubmit={updateProject}>
-      <input
-        type="title"
-        placeholder={'Title'}
-        value={title}
-        onChange={ev => setTitle(ev.target.value)}
-      />
-      <input
-        type="summary"
-        placeholder={'Summary'}
-        value={summary}
-        onChange={ev => setSummary(ev.target.value)}
-      />
-      <input
-        type="file"
-        onChange={ev => setFiles(ev.target.files)}
-      />
-      <Editor onChange={setContent} value={content} />
-      <button style={{ marginTop: '5px' }}>Update project</button>
-    </form>
+    <main className="main-content">
+      <div className="content-wrapper">
+        <div className="main container">
+          <form onSubmit={updateProject}>
+            <input
+              type="title"
+              placeholder={'Title'}
+              value={title}
+              onChange={ev => setTitle(ev.target.value)}
+            />
+            <input
+              type="summary"
+              placeholder={'Summary'}
+              value={summary}
+              onChange={ev => setSummary(ev.target.value)}
+            />
+            <input
+              type="file"
+              onChange={ev => setFiles(ev.target.files)}
+            />
+            <Editor onChange={setContent} value={content} />
+            <button style={{ marginTop: '5px' }}>Update project</button>
+          </form>
+        </div>
+      </div>
+    </main>
   );
 }

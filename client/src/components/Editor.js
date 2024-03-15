@@ -5,7 +5,7 @@ export default function Editor({ value, onChange }) {
   // Define modules for the text editor toolbar
   const modules = {
     toolbar: [
-      [{ header: [1, 2, false] }],
+      [{ header: [1, 2, 3, false] }],
       ['bold', 'italic', 'underline', 'strike', 'blockquote'],
       [
         { list: 'ordered' },
@@ -22,6 +22,7 @@ export default function Editor({ value, onChange }) {
   return (
     <div className="content">
       <ReactQuill
+        className="content-area"
         value={value}
         theme={'snow'}
         onChange={onChange}

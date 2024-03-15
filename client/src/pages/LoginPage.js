@@ -30,26 +30,34 @@ export default function LoginPage() {
 
   // Redirect to home page if redirect state is true
   if (redirect) {
-    return <Navigate to={'/projects'} />;
+    return <Navigate to={'/'} />;
   }
 
   // Render login form
   return (
-    <form className="login" onSubmit={login}>
-      <h1>Login</h1>
-      <input
-        type="text"
-        placeholder="Username"
-        value={username}
-        onChange={ev => setUsername(ev.target.value)}
-      />
-      <input
-        type="password"
-        placeholder="Password"
-        value={password}
-        onChange={ev => setPassword(ev.target.value)}
-      />
-      <button>Login</button>
-    </form>
+    <main className="main-content">
+      <div className="content-wrapper">
+        <div className="main container">
+          <form className="login" onSubmit={login}>
+            <h1 className="login-title">Login</h1>
+            <input
+              className="login-input"
+              type="text"
+              placeholder="Username"
+              value={username}
+              onChange={ev => setUsername(ev.target.value)}
+            />
+            <input
+              className="login-input"
+              type="password"
+              placeholder="Password"
+              value={password}
+              onChange={ev => setPassword(ev.target.value)}
+            />
+            <button className="login-btn">Login</button>
+          </form>
+        </div>
+      </div>
+    </main>
   );
 }
