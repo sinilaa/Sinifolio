@@ -40,6 +40,8 @@ export default function LoginPage() {
         <div className="main container">
           <form className="login" onSubmit={login}>
             <h1 className="login-title">Login</h1>
+            <div className="login_element">
+            <label>Username</label>
             <input
               className="login-input"
               type="text"
@@ -47,6 +49,9 @@ export default function LoginPage() {
               value={username}
               onChange={ev => setUsername(ev.target.value)}
             />
+            </div>
+            <div className="login_element">
+            <label>Password</label>
             <input
               className="login-input"
               type="password"
@@ -54,6 +59,7 @@ export default function LoginPage() {
               value={password}
               onChange={ev => setPassword(ev.target.value)}
             />
+            </div>
             <button className="login-btn">Login</button>
           </form>
         </div>

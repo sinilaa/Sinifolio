@@ -28,6 +28,7 @@
   --title-font-size: 5rem;
   --subtitle-font-size: 2.3rem;
   --nav-font-size: 1.2rem;
+  --btn-font-size: 1.8rem;
   --main-title-font-size: 5.5rem;
   --main-subtitle-font-size: 1.4rem;
 
@@ -67,9 +68,6 @@ body {
   font-family: var(--body-font);
   font-weight: var(--body-font-weight);
   font-size: var(--body-font-size);
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
 }
 
 .main-content {
@@ -77,11 +75,17 @@ body {
   flex: 1;
   flex-direction: column;
   justify-content: center;
+  min-height: 100vh;
 }
   
 .container {
   max-width: 1120px;
   margin-inline: 2rem;
+}
+
+.main {
+  padding-top: var(--padding-top);
+  padding-bottom: var(--padding-bottom);
 }
 
 .title {
@@ -163,12 +167,12 @@ header {
   transition: color .4s;
 }
 
-:is(.nav_link):hover {
+.nav_link:hover {
   color: var(--second-color);
   text-decoration: underline;
 }
 
-:is(.nav_logo, .nav_search, .nav_toggle, .footer_icon):hover {
+.nav_logo, .nav_toggle, .footer_icon:hover {
   color: var(--second-color);
 }
 
@@ -229,15 +233,15 @@ header {
   font-weight: var(--subtitle-font-weight);
   font-size: 1.2rem;
   flex-basis: calc(33.33% - 20px); /* Equal width for all items */
+  width: 50px;
   padding: 20px;
   text-align: center;
-  border-radius: 0.5rem;
+  border-radius: 0.6rem;
 }
 
 .skills_text {
   font-family: var(--main-font);
   font-size: 1.2rem;
-  padding: 20px;
   flex: 1;
 }
 
@@ -246,6 +250,7 @@ header {
   flex: 1;
   justify-content: center;
   align-items: center;
+  text-align: center;
 }
 
 .cv_button a {
@@ -253,11 +258,12 @@ header {
   color: var(--body-color);
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
-  font-size: 1.8rem;
-  padding: 0.9rem 5.5rem;
+  font-size: var(--btn-font-size);
+  width: 220px;
+  padding: 1.2rem;
   border: 0.2rem solid var(--first-color);
-  border-radius: 10rem;
-  transition: 0.3s;
+  border-radius: 11rem;
+  transition: all 0.2s ease-in;
   text-decoration: none;
 }
 
@@ -265,12 +271,14 @@ header {
   background-color: var(--body-color);
   color: var(--second-color);
   border: 0.2rem solid var(--second-color);
+  box-shadow: 0.5rem 0.5rem 0 hsla(212, 100%, 27%, 0.838);
+  transform: translateX(-5px) translateY(-5px);
 }
 
 .skills,
 .experience,
 .cv_button {
-  padding-top: 5rem;
+  padding-top: var(--padding-top);
 }
 
 /*=============== CONTACT PAGE ===============*/
@@ -284,6 +292,7 @@ header {
 
 .contact_social {
   margin-top: 3rem;
+  margin-bottom: 5rem;
   display: flex;
   align-items: center;
 }
@@ -319,6 +328,70 @@ header {
 
 .contact_form {
   margin-top: 5rem;
+  width: 100%;
+  max-width: 800px; /* Maksimileveys estämään liian suurta venymistä */
+  justify-content: center; /* Keskittää lomakkeen vaakasuunnassa */
+  align-items: center; /* Keskittää lomakkeen pystysuunnassa */
+}
+
+.form_container {
+  width: 100%; /* Täyttää vanhemman elementin leveyden */
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 2px solid var(--first-color);
+  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
+  border-radius: 2rem;
+  padding: 4rem;
+}
+
+.form_element {
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.form_element input,
+textarea {
+  background-color: #fefefe;
+  font-family: var(--extra-font);
+  font-size: 1.1rem;
+  padding: 1.1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--first-color);
+  resize: none;
+}
+
+.form_element input:hover, 
+textarea:hover {
+  border: 2px solid var(--second-color);
+  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
+}
+
+.form_btn {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: var(--btn-font-size);
+  width: 220px;
+  padding: 1.2rem;
+  margin-top: 1rem;
+  border: 0.2rem solid var(--first-color);
+  border-radius: 11rem;
+  transition: all 0.2s ease-in;
+}
+
+.form_btn:hover {
+  color: var(--second-color);
+  background-color: var(--body-color);
+  border: 0.2rem solid var(--second-color);
+  box-shadow: 0.5rem 0.5rem 0 hsla(0, 0%, 0%, 0.473);
+  transform: translateX(-5px) translateY(-5px);
 }
 
 /*=============== PROJECTS PAGE ===============*/
@@ -337,6 +410,16 @@ header {
   margin-bottom: 2rem;
 }
 
+
+.project .image img {
+  transition: all 0.2s ease-in;
+}
+
+.project .image img:hover {
+  border: 0.17rem solid var(--second-color);
+  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
+}
+
 .project .texts {
   display: flex;
   justify-content: center;
@@ -345,11 +428,12 @@ header {
 }
 
 .project .texts a {
-  text-decoration:none;
+  text-decoration: none;
 }
 
 .project .texts a:hover {
   text-decoration: underline;
+  text-decoration-thickness: 3px;
   color: var(--second-color);
 }
 
@@ -391,26 +475,41 @@ header {
 
 .content a:hover {
   text-decoration: underline;
+
 }
 
-/*=============== CREATE & EDIT FORM ===============*/
-input{
+/*=============== EDITOR ===============*/
+.editor input{
   display: block;
-  margin-bottom: 5px;
-  width: 100%;
-  padding: 5px 7px;
-  border: 2px solid #ddd;
-  border-radius: 5px;
-  background-color: #fefefe;
+  padding: 15px 10px;
+  border-radius: 0.6rem;
 }
 
+.editor input, 
 .content-area {
   background-color: #fefefe;
+  border: 1px solid var(--first-color);
+  font-family: var(--extra-font);
+  width: 100%;
+  font-size: 1rem;
+  margin-bottom: 0.6rem;
 }
 
-/*=============== EDIT & DELETE BTNS ===============*/
+.editor input:hover,
+.content-area:hover {
+  border: 2px solid var(--first-color);
+}
+
+/*=============== CREATE, EDIT, DELETE ===============*/
 div.edit-row{
   margin-bottom: -2.5rem;
+}
+
+.create_title {
+  color: var(--second-color);
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  padding-bottom: 3rem;
 }
 
 .edit-btn {
@@ -422,6 +521,26 @@ div.edit-row{
   background-color: rgb(203, 23, 23);
 }
 
+.create-btn,
+.update-btn {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  border: 1px solid var(--first-color);
+  font-family: var(--extra-font);
+  border-radius: 5rem;
+  font-size: 1rem;
+  width: 8rem;
+  padding: 18px;
+  gap: 0.2rem;
+  display: inline-flex;
+}
+
+.create-btn:hover,
+.update-btn:hover {
+  background-color: var(--second-color);
+  border: 1px solid var(--second-color);
+}
+
 .edit-btn, 
 .delete-btn {
   color: #fefefe;
@@ -431,8 +550,8 @@ div.edit-row{
   align-items: center;
   justify-content: center;
   gap: 0.2rem;
-  height: 3.5rem;
-  width: 9rem;
+  width: 8rem;
+  padding: 18px;
   margin: 0rem 0.2rem;
   border: none;
   border-radius: 4rem;
@@ -447,17 +566,19 @@ div.edit-row{
 }
 
 .edit-btn svg, 
-.delete-btn svg {
+.delete-btn svg,
+.update-btn svg,
+.create-btn svg {
   height: 1.3rem;
 }
 
 /*=============== LOGIN ===============*/
-.login, form.register{
-  background-color: hsl(39, 70%, 95%);
-  border: 0.2rem solid var(--first-color);
-  border-radius: 1.5rem;
+.login, .register{
+  border: 2px solid var(--first-color);
+  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
+  border-radius: 2rem;
   max-width: 400px;
-  padding: 3rem;
+  padding: 3rem;  
   margin: 0 auto;
 }
 
@@ -468,17 +589,27 @@ div.edit-row{
   margin-bottom: 3rem;
 }
 
+.login_element {
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
 .login-input {
   background-color: #fefefe;
   color: var(--first-color);
-  border: 0.15rem solid var(--first-color);
+  border-radius: 2rem;
+  border: 2px solid var(--first-color);
   font-family: var(--extra-font);
   font-size: 1rem;
-  border-radius: 2rem;
   display: block;
   width: 100%;
   padding: 1.2rem 2.1rem;
-  margin-bottom: 0.7rem;
+  margin-bottom: 1rem;
 }
 
 .login-input::placeholder {
@@ -486,11 +617,8 @@ div.edit-row{
 }
 
 .login-input:hover {
-  border: 0.17rem solid var(--second-color);;
-}
-
-login-input::placeholder :hover {
-  color: #fefefe;
+  border: 0.17rem solid var(--second-color);
+  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
 }
 
 .login-btn {
@@ -500,14 +628,19 @@ login-input::placeholder :hover {
   font-weight: var(--title-font-weight);
   font-size: 1rem;
   text-transform: uppercase;
-  padding: 1.2rem 2.1rem;
-  border: none;
-  border-radius: 10rem;
+  width: 130px;
+  padding: 1.1rem;
+  border: 0.2rem solid var(--first-color);
+  border-radius: 11rem;
+  transition: all 0.2s ease-in;
   margin-top: 1rem;
 }
 
 .login-btn:hover {
   background-color: var(--second-color);
+  border: 0.2rem solid var(--second-color);
+  box-shadow: 0.5rem 0.5rem 0 hsla(212, 100%, 27%, 0.838);
+  transform: translateX(-5px) translateY(-5px);
 }
 
 /*=============== FOOTER ===============*/
@@ -538,13 +671,16 @@ login-input::placeholder :hover {
 @media screen and (max-width: 1023px) {
   .main {
     padding-top: calc(var(--padding-top) - 3rem);
-    padding-bottom: calc(var(--padding-bottom) + 3rem);
+    padding-bottom: calc(var(--padding-bottom) + 5rem);
   }
   .skills_section {
-    flex-direction: column; /* Aseta elementit päällekkäin mobiilissa */
+    flex-direction: column;
   }
   .skills_column {
-    width: 100%; /* Täysi leveys mobiilissa */
+    width: 100%;
+  }
+  .skills_text {
+    margin-top: 1rem;
   }
   .nav_menu {
     background-color: var(--body-color);
@@ -595,15 +731,6 @@ login-input::placeholder :hover {
 /* Show menu */
 .show-menu {
   top: 0;
-}
-
-/*=============== BREAKPOINTS ===============*/
-/* RESPONSIVE FOR MEDIUM DEVICES */
-@media screen and (min-width: 576px) {
-  .main {
-    padding-top: var(--padding-top);
-    padding-bottom: calc(var(--padding-bottom) + 3rem );
-  }
 }
 
 /* RESPONSIVE FOR LARGE DEVICES */
