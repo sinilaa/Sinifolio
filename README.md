@@ -67,7 +67,7 @@ sinifolio/
 
 ## Features
 
-# Frontend
+## Frontend
 
 - **App.js**
     - Defines routes using React Router for different pages in the application.
@@ -76,7 +76,7 @@ sinifolio/
 - **index.js(frontend)**
     - Initializes the React application and renders the root component into the DOM.
 
-# Pages
+## Pages
 
 - **HomePage.js**
     - Displays a welcome message and brief introduction.
@@ -96,7 +96,7 @@ sinifolio/
 - **EditProject.js**
     - Allows authenticated users to edit existing projects.
 
-# Components
+## Components
 
 - **ContactForm.js**
     - Renders a contact form allowing users to send messages via EmailJS.
@@ -115,7 +115,7 @@ sinifolio/
     - Displays and renders individual project details with a title, summary, and cover image.
     - Provides a link to the detailed project page for more information.
 
-# Styles (App.css)
+## Styles (App.css)
 
 - **Variables CSS** 
     - Defines variables for colors, fonts, sizes, and other properties used throughout the stylesheet.
@@ -142,7 +142,7 @@ sinifolio/
 - **Media Queries**
     - Responsiveness for small, medium and large devices, adjusting styles based on screen size.
 
-# Backend
+## Backend
 
 - **index.js**
     - Backend server using Express.js to handle API requests and interact with the database.
@@ -151,7 +151,7 @@ sinifolio/
     - Handles user login/logout operations with JWT authentication.
     - Manages CRUD operations for projects with file uploads.
  
-# Models
+## Models
 
 - **User.js** 
     -  Defines the schema for the User model using Mongoose.
