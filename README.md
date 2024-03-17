@@ -73,7 +73,7 @@ sinifolio/
     - Defines routes using React Router for different pages in the application.
 - **Layout.js**
     - Defines the main layout structure of the application with a header, main content, and footer.
-- **index.js(frontend)**
+- **index.js**
     - Initializes the React application and renders the root component into the DOM.
 
 ### Pages
