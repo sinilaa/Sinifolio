@@ -16,6 +16,7 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 - **MongoDB**
 
 ## File Structure
+
 ```
 sinifolio/
 │
