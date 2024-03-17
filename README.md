@@ -4,7 +4,7 @@
 Web Portfolio
 
 ## Description
-This project is a personal web portfolio showcasing my work and skills as a web developer. It includes sections for about me, my skills and experience, my projects and contact information with contact form. It also includes a project management system, which can be used to create, edit and delete projects. The portfolio is designed to be responsive and visually appealing. 
+This project is a personal web portfolio showcasing my work and skills as a web developer. It includes sections for about me, my skills and experience, my projects and contact information with contact form. It also includes a project management system for admin user, which can be used to create, edit and delete projects. The portfolio is designed to be responsive and visually appealing. 
 
 ## Used technologies
 - **HTML**
