@@ -19,10 +19,11 @@ export default function ProjectsPage() {
   // Render the list of projects
   return (
     <>
-      <main className="main-content">
-        <div className="content-wrapper">
+      <main className="main_content">
+        <div className="content_wrapper">
           <div className="main container">
             <h1 className="title">Projects</h1>
+            {/* Render each project using the Project component */}
             {projects.length > 0 && projects.map(project => (
               <Project key={project.id} {...project} />
             ))}

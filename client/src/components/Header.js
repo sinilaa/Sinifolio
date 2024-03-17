@@ -10,10 +10,12 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const navigate = useNavigate();
   
+  // Function to toggle the menu for mobile/ipad view
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
 
+  // Function to close menu on mobile/ipad view
   const closeMenuOnMobile = () => {
     if (window.innerWidth <= 1150) {
       setShowMenu(false);
@@ -37,63 +39,108 @@ export default function Header() {
       credentials: 'include',
       method: 'POST',
     }).then(() => {
-    setUserInfo(null);
-    navigate('/');
+      setUserInfo(null);
+      navigate('/');
     });
   }
 
   // Get the username from user info if available
   const username = userInfo?.username;
 
-  // Render the header with navigation links
+  // Render the header with navigation menu
   return (
     <header>
       <nav className="nav container">
-      <Link to="/" className="nav_logo">Logo</Link>
-      <div className={`nav_menu ${showMenu ? "show-menu" : ""}`} id="nav-menu">
-      <ul className="nav_list">
-        {username ? (
-          <>
-            <li className="nav_item">
-              <Link to= "/about"className="nav_link" onClick={closeMenuOnMobile}>About</Link>
-            </li>
-            <li className="nav_item">
-              <Link to="/contact" className="nav_link" onClick={closeMenuOnMobile}>Contact</Link>
-            </li>
-            <li className="nav_item">
-              <Link to="/projects" className="nav_link" onClick={closeMenuOnMobile}>Projects</Link>
-            </li>
-            <li className="nav_item">
-              <Link to="/create" className="nav_link" onClick={closeMenuOnMobile}>Create project</Link>
-            </li>
-            <li className="nav_item">
-              <a onClick={() => {logout(); closeMenuOnMobile();}} className="nav_link">Logout ({username})</a>
-            </li>
-          </>
-        ) : (
-          <>    
-            <li className="nav_item">
-              <Link to= "/about"className="nav_link" onClick={closeMenuOnMobile}>About</Link>
-            </li>
-            <li className="nav_item">
-              <Link to="/contact" className="nav_link" onClick={closeMenuOnMobile}>Contact</Link>
-            </li>
-            <li className="nav_item">
-              <Link to="/projects" className="nav_link" onClick={closeMenuOnMobile}>Projects</Link>
-            </li>
-            <li className="nav_item">
-            <Link to="/login" className="nav_link" onClick={closeMenuOnMobile}>Login</Link>
-            </li>
-          </>
-        )}
-        </ul>
-          <div className="nav_close" id="nav-close" onClick={toggleMenu}>
+        <Link to="/" className="nav_logo">Logo</Link>
+      
+        <div className={`nav_menu ${showMenu ? "show-menu" : ""}`} id="nav-menu">
+          <ul className="nav_list">
+            {/* Render different navigation links based on user authentication */}
+            {username ? (
+              <> 
+                {/* Authenticated links */}
+                <li className="nav_item">
+                  <Link to= "/about" 
+                  className="nav_link" 
+                  onClick={closeMenuOnMobile}>
+                  About</Link>
+                </li>
+
+                <li className="nav_item">
+                  <Link to="/projects"
+                  className="nav_link" 
+                  onClick={closeMenuOnMobile}>
+                  Projects</Link>
+                </li>
+
+                <li className="nav_item">
+                  <Link to="/create" 
+                  className="nav_link" 
+                  onClick={closeMenuOnMobile}>
+                  Create project</Link>
+                </li>
+
+                <li className="nav_item">
+                  <Link to="/contact" 
+                  className="nav_link" 
+                  onClick={closeMenuOnMobile}>
+                  Contact</Link>
+                </li>
+
+                <li className="nav_item">
+                  <a onClick={() => {logout(); closeMenuOnMobile();}} 
+                  className="nav_link">
+                  Logout ({username})</a>
+                </li>
+              </>
+            ) : (
+              <>
+                {/* Unauthenticated links */}
+                <li className="nav_item">
+                  <Link to= "/about" 
+                  className="nav_link" 
+                  onClick={closeMenuOnMobile}>
+                  About</Link>
+                </li>
+
+                <li className="nav_item">
+                  <Link to="/projects" 
+                  className="nav_link" 
+                  onClick={closeMenuOnMobile}>
+                  Projects</Link>
+                </li>
+
+                <li className="nav_item">
+                  <Link to="/contact" 
+                  className="nav_link" 
+                  onClick={closeMenuOnMobile}>
+                  Contact</Link>
+                </li>
+
+                <li className="nav_item">
+                  <Link to="/login" 
+                  className="nav_link" 
+                  onClick={closeMenuOnMobile}>
+                  Login</Link>
+                </li>
+              </>
+            )}
+          </ul>
+          
+          {/* Close menu icon for mobile/ipad view */}
+          <div className="nav_close" 
+            id="nav-close" 
+            onClick={toggleMenu}>
             <RiCloseLine />
           </div>
         </div>
-          <div className="nav_toggle" id="nav-toggle" onClick={toggleMenu}>
-            <RiMenuLine />
-          </div>
+
+        {/* Toggle menu icon for mobile/ipad view */}
+        <div className="nav_toggle" 
+          id="nav-toggle" 
+          onClick={toggleMenu}>
+          <RiMenuLine />
+        </div>
       </nav>
     </header>
   );

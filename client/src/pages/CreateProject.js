@@ -37,31 +37,36 @@ export default function CreateProject() {
 
   // Render form for creating a new project
   return (
-    <main className="main-content">
-      <div className="content-wrapper">
+    <main className="main_content">
+      <div className="content_wrapper">
         <div className="main container">
-        <h2 className="create_title">Create new project!</h2>
+        <h2 className="create_title">Create new project!</h2>    
           <form onSubmit={createNewProject} className="editor">
-            <input
-              type="title"
+            <input type="title"
               placeholder={'Title'}
               value={title}
               onChange={ev => setTitle(ev.target.value)}
             />
+
             <input
               type="summary"
               placeholder={'Summary'}
               value={summary}
               onChange={ev => setSummary(ev.target.value)}
             />
+
             <input
               type="file"
               onChange={ev => setFiles(ev.target.files)}
             />
+
+            {/* Using custom Editor component for project content */}
             <Editor value={content} onChange={setContent} />
-            <button className="create-btn"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
-</svg>Create</button>
+
+            <button className="create_btn">
+              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+            </svg>Create</button>
           </form>
         </div>
       </div>

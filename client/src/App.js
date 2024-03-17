@@ -3,7 +3,6 @@ import {Route, Routes} from "react-router-dom";
 import Layout from "./Layout";
 import ProjectsPage from "./pages/ProjectsPage";
 import LoginPage from "./pages/LoginPage";
-import RegisterPage from "./pages/RegisterPage";
 import {UserContextProvider} from "./contexts/UserContext";
 import CreateProject from "./pages/CreateProject";
 import ProjectPage from "./pages/ProjectPage";
@@ -25,7 +24,6 @@ function App() {
           <Route path="/project/:id" element={<ProjectPage />} />
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/login" element={<LoginPage />} />
-          <Route path="/register" element={<RegisterPage />} />
           <Route path="/create" element={<CreateProject />} />
           <Route path="/edit/:id" element={<EditProject />} />
         </Route>

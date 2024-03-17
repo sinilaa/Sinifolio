@@ -22,7 +22,7 @@ export default function Editor({ value, onChange }) {
   return (
     <div className="content">
       <ReactQuill
-        className="content-area"
+        className="content_area"
         value={value}
         theme={'snow'}
         onChange={onChange}

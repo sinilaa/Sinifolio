@@ -1,9 +1,11 @@
 import React from "react";
 
+// Functional component representing the Home page
 export default function HomePage() {
+  
   return (
-    <main className="main-content">
-      <div className="content-wrapper">
+    <main className="main_content">
+      <div className="content_wrapper">
         <div className="main container">
           <div className="main_title">
             <h1>

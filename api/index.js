@@ -28,23 +28,6 @@ mongoose.connect('mongodb+srv://sinil:ByV7lmRi3YMVy7mi@managmentsystem.zblw1ey.m
 const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
-// User registration
-app.post('/register', async (req, res) => {
-  // Extract username and password from request body
-  const { username, password } = req.body;
-  try {
-    // Create a new user in the database with hashed password
-    const userDoc = await User.create({
-      username,
-      password: bcrypt.hashSync(password, salt),
-    });
-    res.json(userDoc);
-  } catch (e) {
-    console.log(e);
-    res.status(400).json(e);
-  }
-});
-
 // User login
 app.post('/login', async (req, res) => {
   // Extract username and password from request body

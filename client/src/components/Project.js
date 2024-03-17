@@ -11,11 +11,12 @@ export default function Project({_id,title,summary,cover,content}) {
           <img src={'http://localhost:4000/'+cover} alt=""/>
         </Link>
       </div>
+
       <div className="texts">
         <Link to={`/project/${_id}`}>
-        <h2>{title}</h2>
+          <h2>{title}</h2>
         </Link>
-        <p className="summary">{summary}</p>
+          <p className="summary">{summary}</p>
       </div>
     </div>
   );

@@ -70,7 +70,7 @@ body {
   font-size: var(--body-font-size);
 }
 
-.main-content {
+.main_content {
   display: flex;
   flex: 1;
   flex-direction: column;
@@ -176,7 +176,7 @@ header {
   color: var(--second-color);
 }
 
-/*=============== MAIN PAGE ===============*/
+/*=============== HOME PAGE ===============*/
 .main_title h1 {
   font-family: var(--title-font);
   font-weight: var(--title-font-weight);
@@ -225,8 +225,7 @@ header {
   gap: 10px;
 }
 
-.skill_name_short,
-.skill_name_long {
+.skill_name {
   background-color: var(--first-color);
   color: var(--body-color);
   font-family: var(--extra-font);
@@ -281,119 +280,6 @@ header {
   padding-top: var(--padding-top);
 }
 
-/*=============== CONTACT PAGE ===============*/
-.contact_info {
-  color: var(--second-color);
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  text-transform: uppercase;
-  margin-right: 1rem;
-}
-
-.contact_social {
-  margin-top: 3rem;
-  margin-bottom: 5rem;
-  display: flex;
-  align-items: center;
-}
-
-.contact_social .contact_link {
-  margin-right: 1rem;
-}
-
-.contact_social i {
-  background-color: var(--body-color);
-  color: var(--first-color);
-  font-size: 1.2rem;
-  border: 0.1rem solid var(--first-color);
-  border-radius: 50%;
-  width: 3rem;
-  height: 3rem; 
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.4s;
-}
-
-.contact_social i:hover {
-  background-color: var(--first-color);
-  color: var(--body-color);
-  border: 0.1rem solid var(--first-color);
-}
-
-.contact_social .remixicon {
-  height: 1.5rem;
-  width: 1.5rem
-}
-
-.contact_form {
-  margin-top: 5rem;
-  width: 100%;
-  max-width: 800px; /* Maksimileveys estämään liian suurta venymistä */
-  justify-content: center; /* Keskittää lomakkeen vaakasuunnassa */
-  align-items: center; /* Keskittää lomakkeen pystysuunnassa */
-}
-
-.form_container {
-  width: 100%; /* Täyttää vanhemman elementin leveyden */
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-  border: 2px solid var(--first-color);
-  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
-  border-radius: 2rem;
-  padding: 4rem;
-}
-
-.form_element {
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  font-size: 1.4rem;
-  display: flex;
-  flex-direction: column;
-  gap: 0.6rem;
-  margin-bottom: 1rem;
-}
-
-.form_element input,
-textarea {
-  background-color: #fefefe;
-  font-family: var(--extra-font);
-  font-size: 1.1rem;
-  padding: 1.1rem;
-  border-radius: 2rem;
-  border: 2px solid var(--first-color);
-  resize: none;
-}
-
-.form_element input:hover, 
-textarea:hover {
-  border: 2px solid var(--second-color);
-  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
-}
-
-.form_btn {
-  background-color: var(--first-color);
-  color: var(--body-color);
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  font-size: var(--btn-font-size);
-  width: 220px;
-  padding: 1.2rem;
-  margin-top: 1rem;
-  border: 0.2rem solid var(--first-color);
-  border-radius: 11rem;
-  transition: all 0.2s ease-in;
-}
-
-.form_btn:hover {
-  color: var(--second-color);
-  background-color: var(--body-color);
-  border: 0.2rem solid var(--second-color);
-  box-shadow: 0.5rem 0.5rem 0 hsla(0, 0%, 0%, 0.473);
-  transform: translateX(-5px) translateY(-5px);
-}
-
 /*=============== PROJECTS PAGE ===============*/
 .project {
   display: grid;
@@ -409,7 +295,6 @@ textarea:hover {
   font-size: var(--subtitle-font-size);
   margin-bottom: 2rem;
 }
-
 
 .project .image img {
   transition: all 0.2s ease-in;
@@ -478,6 +363,123 @@ textarea:hover {
 
 }
 
+/*=============== CONTACT PAGE ===============*/
+.contact_info {
+  color: var(--second-color);
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  text-transform: uppercase;
+  margin-right: 1rem;
+}
+
+.contact_social {
+  margin-top: 3rem;
+  margin-bottom: 5rem;
+  display: flex;
+  align-items: center;
+}
+
+.contact_social .contact_link {
+  margin-right: 1rem;
+}
+
+.contact_social i {
+  background-color: var(--body-color);
+  color: var(--first-color);
+  font-size: 1.2rem;
+  border: 0.1rem solid var(--first-color);
+  border-radius: 50%;
+  width: 3rem;
+  height: 3rem; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: 0.4s;
+}
+
+.contact_social i:hover {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  border: 0.1rem solid var(--first-color);
+}
+
+.contact_social .remixicon {
+  height: 1.5rem;
+  width: 1.5rem
+}
+
+.contact_form {
+  margin-top: 5rem;
+  width: 100%;
+  max-width: 800px;
+  justify-content: center;
+  align-items: center;
+}
+
+.form_container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  border: 2px solid var(--first-color);
+  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
+  border-radius: 2rem;
+  padding: 4rem;
+}
+
+.form_element {
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: 1.4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.form_element input,
+textarea {
+  background-color: #fefefe;
+  font-family: var(--extra-font);
+  font-size: 1.1rem;
+  padding: 1.1rem;
+  border-radius: 2rem;
+  border: 2px solid var(--first-color);
+  resize: none;
+}
+
+.form_element input:hover, 
+textarea:hover {
+  border: 2px solid var(--second-color);
+  box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
+}
+
+.form_element input::placeholder {
+  color: #696969;
+}
+
+.form_btn {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  font-size: var(--btn-font-size);
+  width: 220px;
+  padding: 1.2rem;
+  margin-top: 1rem;
+  border: 0.2rem solid var(--first-color);
+  border-radius: 11rem;
+  transition: all 0.2s ease-in;
+}
+
+.form_btn:hover {
+  color: var(--second-color);
+  background-color: var(--body-color);
+  border: 0.2rem solid var(--second-color);
+  box-shadow: 0.5rem 0.5rem 0 hsla(0, 0%, 0%, 0.473);
+  transform: translateX(-5px) translateY(-5px);
+}
+
 /*=============== EDITOR ===============*/
 .editor input{
   display: block;
@@ -486,7 +488,7 @@ textarea:hover {
 }
 
 .editor input, 
-.content-area {
+.content_area {
   background-color: #fefefe;
   border: 1px solid var(--first-color);
   font-family: var(--extra-font);
@@ -496,12 +498,12 @@ textarea:hover {
 }
 
 .editor input:hover,
-.content-area:hover {
+.content_area:hover {
   border: 2px solid var(--first-color);
 }
 
 /*=============== CREATE, EDIT, DELETE ===============*/
-div.edit-row{
+div.edit_row{
   margin-bottom: -2.5rem;
 }
 
@@ -512,17 +514,17 @@ div.edit-row{
   padding-bottom: 3rem;
 }
 
-.edit-btn {
+.edit_btn {
   text-decoration: none;
   background-color: var(--first-color);
 }
 
-.delete-btn {
+.delete_btn {
   background-color: rgb(203, 23, 23);
 }
 
-.create-btn,
-.update-btn {
+.create_btn,
+.update_btn {
   background-color: var(--first-color);
   color: var(--body-color);
   border: 1px solid var(--first-color);
@@ -535,14 +537,14 @@ div.edit-row{
   display: inline-flex;
 }
 
-.create-btn:hover,
-.update-btn:hover {
+.create_btn:hover,
+.update_btn:hover {
   background-color: var(--second-color);
   border: 1px solid var(--second-color);
 }
 
-.edit-btn, 
-.delete-btn {
+.edit_btn, 
+.delete_btn {
   color: #fefefe;
   font-family: var(--extra-font);
   font-size: 1rem;
@@ -557,23 +559,23 @@ div.edit-row{
   border-radius: 4rem;
 }
 
-.edit-btn:hover {
+.edit_btn:hover {
   background-color: hsla(0, 0%, 13%, 0.792);
 }
 
-.delete-btn:hover {
+.delete_btn:hover {
   background-color: rgba(228, 33, 33, 0.694);
 }
 
-.edit-btn svg, 
-.delete-btn svg,
-.update-btn svg,
-.create-btn svg {
+.edit_btn svg, 
+.delete_btn svg,
+.update_btn svg,
+.create_btn svg {
   height: 1.3rem;
 }
 
-/*=============== LOGIN ===============*/
-.login, .register{
+/*=============== LOGIN PAGE ===============*/
+.login {
   border: 2px solid var(--first-color);
   box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
   border-radius: 2rem;
@@ -582,7 +584,7 @@ div.edit-row{
   margin: 0 auto;
 }
 
-.login-title, form.register h1{
+.login_title {
   text-align: center;
   font-size: 2.4rem;
   color: var(--first-color);
@@ -599,7 +601,7 @@ div.edit-row{
   margin-bottom: 1rem;
 }
 
-.login-input {
+.login_input {
   background-color: #fefefe;
   color: var(--first-color);
   border-radius: 2rem;
@@ -612,16 +614,16 @@ div.edit-row{
   margin-bottom: 1rem;
 }
 
-.login-input::placeholder {
+.login_input::placeholder {
   color: #696969;
 }
 
-.login-input:hover {
+.login_input:hover {
   border: 0.17rem solid var(--second-color);
   box-shadow: 0.8rem 0.8rem 0 hsla(212, 100%, 27%, 0.838);
 }
 
-.login-btn {
+.login_btn {
   background-color: var(--first-color);
   color: var(--body-color);
   font-family: var(--title-font);
@@ -636,7 +638,7 @@ div.edit-row{
   margin-top: 1rem;
 }
 
-.login-btn:hover {
+.login_btn:hover {
   background-color: var(--second-color);
   border: 0.2rem solid var(--second-color);
   box-shadow: 0.5rem 0.5rem 0 hsla(212, 100%, 27%, 0.838);

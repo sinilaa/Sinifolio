@@ -35,32 +35,34 @@ export default function LoginPage() {
 
   // Render login form
   return (
-    <main className="main-content">
-      <div className="content-wrapper">
+    <main className="main_content">
+      <div className="content_wrapper">
         <div className="main container">
           <form className="login" onSubmit={login}>
-            <h1 className="login-title">Login</h1>
+            <h1 className="login_title">Login</h1>
             <div className="login_element">
-            <label>Username</label>
-            <input
-              className="login-input"
-              type="text"
-              placeholder="Username"
-              value={username}
-              onChange={ev => setUsername(ev.target.value)}
-            />
+              <label>Username</label>
+              <input
+                className="login_input"
+                type="text"
+                placeholder="Username"
+                value={username}
+                onChange={ev => setUsername(ev.target.value)}
+              />
             </div>
+
             <div className="login_element">
-            <label>Password</label>
-            <input
-              className="login-input"
-              type="password"
-              placeholder="Password"
-              value={password}
-              onChange={ev => setPassword(ev.target.value)}
-            />
+              <label>Password</label>
+              <input
+                className="login_input"
+                type="password"
+                placeholder="Password"
+                value={password}
+                onChange={ev => setPassword(ev.target.value)}
+              />
             </div>
-            <button className="login-btn">Login</button>
+
+            <button className="login_btn">Login</button>
           </form>
         </div>
       </div>
