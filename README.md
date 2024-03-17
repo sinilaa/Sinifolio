@@ -1,12 +1,12 @@
 # Sinifolio
 
-## Project
+# Project
 Web Portfolio
 
-## Description
+# Description
 This project is a personal web portfolio showcasing my work and skills as a web developer. It includes sections for about me, my skills and experience, my projects and contact information. The portfolio is designed to be responsive and visually appealing. 
 
-## Used technologies
+# Used technologies
 - **HTML**
 - **CSS**
 - **JavaScript**
@@ -15,7 +15,7 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 - **Node.js**
 - **MongoDB**
 
-## File Structure
+# File Structure
 
 sinifolio/
 │
@@ -65,7 +65,7 @@ sinifolio/
 ├── package.json
 └── README.md
 
-## Features
+# Features
 
 ## Frontend
 
