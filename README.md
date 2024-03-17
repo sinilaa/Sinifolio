@@ -1,6 +1,6 @@
-# SINIFOLIO
+# Sinifolio
 
-# Project
+### Project
 Web Portfolio
 
 # Description
