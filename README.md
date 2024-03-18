@@ -13,7 +13,7 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 - **React.js**
 - **Express.js**
 - **Node.js**
-- **MongoDB**
+- **MongoDB Atlas**
 
 ## Used libraries
 - **Mongoose**
