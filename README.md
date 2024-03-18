@@ -13,7 +13,19 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 - **React.js**
 - **Express.js**
 - **Node.js**
-- **MongoDB/Mongoose**
+- **MongoDB**
+
+## Used libaries
+- **Mongoose**
+- **React-Router-Dom**
+- **remixicon**
+- **bcryptjs**
+- **cookie-parser**
+- **cors**
+- **emailjs-com**
+- **jsonwebtoken**
+- **multer**
+
 
 ## File Structure
 
