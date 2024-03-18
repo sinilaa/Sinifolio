@@ -15,16 +15,16 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 - **Node.js**
 - **MongoDB**
 
-## Used libaries
+## Used libraries
 - **Mongoose**
-- **React-Router-Dom**
-- **remixicon**
-- **bcryptjs**
-- **cookie-parser**
-- **cors**
-- **emailjs-com**
-- **jsonwebtoken**
-- **multer**
+- **React Router**
+- **Remix Icon**
+- **Bcrypt.js**
+- **Cookie Parser**
+- **Cors**
+- **Email.js**
+- **JSON Web Token**
+- **Multer**
 
 
 ## File Structure
