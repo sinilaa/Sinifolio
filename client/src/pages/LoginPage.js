@@ -7,11 +7,27 @@ export default function LoginPage() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const [usernameError, setUsernameError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
   const { setUserInfo } = useContext(UserContext);
+  const [error, setError] = useState('');
 
   // Function to handle user login
   async function login(ev) {
     ev.preventDefault();
+
+    // Clear previous error messages
+    setUsernameError('');
+    setPasswordError('');
+    setError(''); // Clear previous error message
+
+    // Check if any field is empty
+    if (!username || !password) {
+      setUsernameError(username ? '' : '* Username is required');
+      setPasswordError(password ? '' : '* Password is required');
+      return;
+    }
+
     const response = await fetch('http://localhost:4000/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
@@ -24,7 +40,9 @@ export default function LoginPage() {
         setRedirect(true); // Redirect to home page after successful login
       });
     } else {
-      alert('Wrong credentials'); // Alert user for incorrect credentials
+      response.json().then(data => {
+        setError(data.error); // Set error message from server response
+      });
     }
   }
 
@@ -35,37 +53,37 @@ export default function LoginPage() {
 
   // Render login form
   return (
-    <main className="main_content">
-      <div className="content_wrapper">
-        <div className="main container">
-          <form className="login" onSubmit={login}>
-            <h1 className="login_title">Login</h1>
-            <div className="login_element">
-              <label>Username</label>
-              <input
-                className="login_input"
-                type="text"
-                placeholder="Username"
-                value={username}
-                onChange={ev => setUsername(ev.target.value)}
-              />
-            </div>
-
-            <div className="login_element">
-              <label>Password</label>
-              <input
-                className="login_input"
-                type="password"
-                placeholder="Password"
-                value={password}
-                onChange={ev => setPassword(ev.target.value)}
-              />
-            </div>
-
-            <button className="login_btn">Login</button>
-          </form>
+    <div className="main container">
+      <form className="login" onSubmit={login}>
+        <h1 className="login_title">Login</h1>
+        <div className="login_element">
+          <label>Username</label>
+          <input
+            className="login_input"
+            type="text"
+            placeholder="Username"
+            value={username}
+            onChange={ev => setUsername(ev.target.value)}
+          />
+          <div className="error_message">{usernameError}</div>
         </div>
-      </div>
-    </main>
+
+        <div className="login_element">
+          <label>Password</label>
+          <input
+            className="login_input"
+            type="password"
+            placeholder="Password"
+            value={password}
+            onChange={ev => setPassword(ev.target.value)}
+          />
+          <div className="error_message">{passwordError}</div>
+        </div>
+
+        <div className="error_message">{error}</div> {/* Display server error message */}
+        
+        <button className="login_btn">Login</button>
+      </form>
+    </div>
   );
 }

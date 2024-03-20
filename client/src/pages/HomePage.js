@@ -4,8 +4,6 @@ import React from "react";
 export default function HomePage() {
   
   return (
-    <main className="main_content">
-      <div className="content_wrapper">
         <div className="main container">
           <div className="main_title">
             <h1>
@@ -20,7 +18,5 @@ export default function HomePage() {
             </h2>
           </div>
         </div>
-      </div>
-    </main>
   );
 }

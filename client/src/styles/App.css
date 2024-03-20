@@ -36,18 +36,16 @@
   --body-font-weight: 400;
   --title-font-weight: 700;
   --subtitle-font-weight: 600;
-
-  /*========== Z INDEX ==========*/
-  --z-fixed: 100;
-  --z-modal: 1000;
 }
 
 /*========== Responsive typography ==========*/
 /* RESPONSIVE FOR SMALL DEVICES */
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 600px) {
   :root {
     --title-font-size: 3rem;
     --subtitle-font-size: 1.5rem;
+    --main-title-font-size: 3rem;
+    --main-subtitle-font-size: 1rem;
   }
 }
 
@@ -113,10 +111,47 @@ a {
   
 a, button {
   cursor: pointer;
+  text-decoration: none;
 }
 
 img {
   max-width: 100%;
+}
+
+.project h2 {
+  font-size: var(--subtitle-font-size);
+}
+
+.main_title h1 
+.project h2,
+.project .texts a,
+.content h1,
+.content h2,
+.content h3,
+.contact_info,
+.create_title {
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  color: var(--second-color);
+}
+
+.cv_button a,
+.form_btn,
+.login_btn {
+  background-color: var(--first-color);
+  color: var(--body-color);
+  font-family: var(--title-font);
+  font-weight: var(--title-font-weight);
+  border: 0.2rem solid var(--first-color);
+  border-radius: 11rem;
+  transition: all 0.2s ease-in;
+}
+
+.cv_button a,
+.form_btn {
+  font-size: var(--btn-font-size);
+  width: 220px;
+  padding: 1.2rem;
 }
 
 /*=============== HEADER & NAV ===============*/
@@ -125,7 +160,7 @@ header {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: var(--z-fixed);
+  z-index: 100;
 }
 
 .nav {
@@ -158,13 +193,18 @@ header {
   column-gap: 1rem;
 }
 
-.nav_search,
-.nav_toggle, 
-.nav_close {
+.nav_toggle svg, 
+.nav_close svg {
   color: var(--first-color);
-  font-size: 1.25rem;
+  width: 1.2em; 
+  height: 1.2em;
   cursor: pointer;
   transition: color .4s;
+}
+
+.nav_close svg {
+  width: 1.3em; 
+  height: 1.3em;
 }
 
 .nav_link:hover {
@@ -172,7 +212,9 @@ header {
   text-decoration: underline;
 }
 
-.nav_logo, .nav_toggle, .footer_icon:hover {
+.nav_logo, 
+.nav_toggle svg:hover,
+.nav_close svg:hover {
   color: var(--second-color);
 }
 
@@ -203,24 +245,31 @@ header {
   line-height: 2.6rem;
 }
 
-.skills_section {
+.skills_section,
+.skills_column_skills,
+.skills_list,
+.cv_button {
   display: flex;
+}
+
+.skills_column_skills,
+.skills_column_text,
+.skills_text,
+.cv_button {
+  flex: 1;
+}
+
+
+.skills_section {
   justify-content: space-between;
   gap: 2rem;
 }
 
 .skills_column_skills {
-  display: flex;
-  flex: 1;
   align-items: center;
 }
 
-.skills_column_text {
-  flex: 1;
-}
-
 .skills_list {
-  display: flex;
   flex-wrap: wrap;
   gap: 10px;
 }
@@ -231,7 +280,7 @@ header {
   font-family: var(--extra-font);
   font-weight: var(--subtitle-font-weight);
   font-size: 1.2rem;
-  flex-basis: calc(33.33% - 20px); /* Equal width for all items */
+  flex-basis: calc(33.33% - 20px);
   width: 50px;
   padding: 20px;
   text-align: center;
@@ -239,31 +288,13 @@ header {
 }
 
 .skills_text {
-  font-family: var(--main-font);
   font-size: 1.2rem;
-  flex: 1;
 }
 
 .cv_button {
-  display: flex;
-  flex: 1;
   justify-content: center;
   align-items: center;
   text-align: center;
-}
-
-.cv_button a {
-  background-color: var(--first-color);
-  color: var(--body-color);
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  font-size: var(--btn-font-size);
-  width: 220px;
-  padding: 1.2rem;
-  border: 0.2rem solid var(--first-color);
-  border-radius: 11rem;
-  transition: all 0.2s ease-in;
-  text-decoration: none;
 }
 
 .cv_button a:hover {
@@ -289,9 +320,6 @@ header {
 }
 
 .project h2 {
-  color: var(--second-color);
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
   font-size: var(--subtitle-font-size);
   margin-bottom: 2rem;
 }
@@ -323,8 +351,7 @@ header {
 }
 
 /*=============== PROJECT PAGE ===============*/
-.content h1 {
-  color: var(--second-color);
+.content h1{
   font-size: var(--title-font-size);
 }
 
@@ -333,20 +360,12 @@ header {
 }
 
 .content h3 {
-  color: var(--second-color);
   text-align: center;
 }
 
 .content h2,
 .content h3 {
   font-size: var(--subtitle-font-size);
-}
-
-.content h1,
-.content h2,
-.content h3 {
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
 }
 
 .content a {
@@ -365,9 +384,6 @@ header {
 
 /*=============== CONTACT PAGE ===============*/
 .contact_info {
-  color: var(--second-color);
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
   text-transform: uppercase;
   margin-right: 1rem;
 }
@@ -403,7 +419,7 @@ header {
   border: 0.1rem solid var(--first-color);
 }
 
-.contact_social .remixicon {
+.contact_social svg {
   height: 1.5rem;
   width: 1.5rem
 }
@@ -459,17 +475,7 @@ textarea:hover {
 }
 
 .form_btn {
-  background-color: var(--first-color);
-  color: var(--body-color);
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  font-size: var(--btn-font-size);
-  width: 220px;
-  padding: 1.2rem;
   margin-top: 1rem;
-  border: 0.2rem solid var(--first-color);
-  border-radius: 11rem;
-  transition: all 0.2s ease-in;
 }
 
 .form_btn:hover {
@@ -508,9 +514,6 @@ div.edit_row{
 }
 
 .create_title {
-  color: var(--second-color);
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
   padding-bottom: 3rem;
 }
 
@@ -624,17 +627,10 @@ div.edit_row{
 }
 
 .login_btn {
-  background-color: var(--first-color);
-  color: var(--body-color);
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
   font-size: 1rem;
   text-transform: uppercase;
   width: 130px;
   padding: 1.1rem;
-  border: 0.2rem solid var(--first-color);
-  border-radius: 11rem;
-  transition: all 0.2s ease-in;
   margin-top: 1rem;
 }
 
@@ -645,6 +641,13 @@ div.edit_row{
   transform: translateX(-5px) translateY(-5px);
 }
 
+.error_message {
+  color: rgb(228, 33, 33);
+  font-family: var(--extra-font);
+  font-weight: var(--subtitle-font-weight);
+  text-transform: uppercase;
+  font-size: 0.9rem;
+}
 /*=============== FOOTER ===============*/
 .footer_social {
   display: flex;
@@ -655,7 +658,7 @@ div.edit_row{
   column-gap: 2.5rem;
 }
 
-.footer_social .remixicon {
+.footer_social svg {
   color: var(--first-color);
   text-decoration: none;
   text-align: left;
@@ -664,7 +667,7 @@ div.edit_row{
   transition: 0.4s;
 }
 
-.footer_social .remixicon:hover  {
+.footer_social svg:hover  {
   color: var(--second-color);
 }
 
@@ -699,7 +702,7 @@ div.edit_row{
     position: fixed;
     bottom: 0;
     width: 100%;
-    z-index: var(--z-fixed);
+    z-index: 100;
   }
   .footer_social {
     justify-content: center;

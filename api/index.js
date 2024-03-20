@@ -34,22 +34,21 @@ app.post('/login', async (req, res) => {
   const { username, password } = req.body;
   // Find user in database based on username
   const userDoc = await User.findOne({ username });
-  // Check if password matches the hashed password in the database
-  const passOk = bcrypt.compareSync(password, userDoc.password);
-  if (passOk) {
-    // Generate JWT token for logged-in user
-    jwt.sign({ username, id: userDoc._id }, secret, {}, (err, token) => {
-      if (err) throw err;
-      // Set the JWT token in a cookie and respond with user info
-      res.cookie('token', token).json({
-        id: userDoc._id,
-        username,
-      });
-    });
-  } else {
+  // Check if user exists and password matches
+  if (!userDoc || !bcrypt.compareSync(password, userDoc.password)) { // Check if user does not exist or password is incorrect
     // Respond with error message for wrong credentials
-    res.status(400).json('wrong credentials');
+    return res.status(400).json({ error: '* Wrong username or password' }); // Send error message as JSON object
   }
+
+  // Generate JWT token for logged-in user
+  jwt.sign({ username, id: userDoc._id }, secret, {}, (err, token) => {
+    if (err) throw err;
+    // Set the JWT token in a cookie and respond with user info
+    res.cookie('token', token).json({
+      id: userDoc._id,
+      username,
+    });
+  });
 });
 
 // Get user profile (requires authentication)

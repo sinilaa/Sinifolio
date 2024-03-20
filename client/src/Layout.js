@@ -8,7 +8,11 @@ export default function Layout() {
   return (
     <main>
       <Header />
+      <main className="main_content">
+      <div className="content_wrapper">
       <Outlet />
+      </div>
+      </main>
       <Footer />
     </main>
   );
