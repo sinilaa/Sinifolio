@@ -3,10 +3,10 @@ const {Schema,model} = mongoose;
 
 // Define the schema for the Project model
 const ProjectSchema = new Schema({
-  title:String,
-  summary:String,
-  content:String,
-  cover:String,
+  title: String,
+  summary: String,
+  content: String,
+  cover: String,
   author:{type:Schema.Types.ObjectId, ref:'User'}, // References the User model
 }, {
   timestamps: true, // Automatically adds createdAt and updatedAt timestamps

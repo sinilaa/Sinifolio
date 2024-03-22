@@ -25,7 +25,6 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 mongoose.connect('mongodb+srv://sinil:ByV7lmRi3YMVy7mi@managmentsystem.zblw1ey.mongodb.net/projectmanager?retryWrites=true&w=majority&appName=ManagmentSystem');
 
 // Hashing salt for bcrypt and JWT secret
-const salt = bcrypt.genSaltSync(10);
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
 
 // User login

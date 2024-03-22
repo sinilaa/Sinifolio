@@ -1,5 +1,3 @@
-import React from "react";
-
 // Functional component representing the Home page
 export default function HomePage() {
   

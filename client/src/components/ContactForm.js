@@ -1,4 +1,3 @@
-import React from 'react';
 import emailjs from 'emailjs-com';
 
 // EmailJS configuration constants
@@ -12,7 +11,7 @@ export default function ContactForm() {
     e.preventDefault();
     // Send form data using EmailJS
     emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
-      .then((result) => {
+      .then(() => {
         alert('Message Sent Successfully'); // When message is sent successfully show success message
       }, (error) => {
         console.log(error.text);

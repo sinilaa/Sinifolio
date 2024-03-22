@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom";
 
 // Functional component to display project details
-export default function Project({_id,title,summary,cover,content}) {
+export default function Project({_id,title,summary,cover}) {
 
   // Render project with image, title, and summary
   return (
@@ -14,7 +14,7 @@ export default function Project({_id,title,summary,cover,content}) {
 
       <div className="texts">
         <Link to={`/project/${_id}`}>
-          <h2>{title}</h2>
+          <h2 className="subtitle">{title}</h2>
         </Link>
           <p className="summary">{summary}</p>
       </div>

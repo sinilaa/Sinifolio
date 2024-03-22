@@ -1,5 +1,3 @@
-import React from "react";
-
 // Functional component representing the About page
 export default function AboutPage() {
   
@@ -67,7 +65,7 @@ export default function AboutPage() {
         voluptates magnam sunt, pariatur excepturi sequi, ducimus cum?</p>
 
         {/* CV download button */}
-        <div className="cv_button">
+        <div className="cv_btn">
           <a href="/assets/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
         </div> 
       </div>

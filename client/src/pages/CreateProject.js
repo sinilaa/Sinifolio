@@ -45,7 +45,7 @@ export default function CreateProject() {
   // Render form for creating a new project
   return (
     <div className="main container">
-    <h2 className="create_title">Create new project!</h2>    
+    <h2 className="subtitle">Create new project!</h2>    
       <form onSubmit={createNewProject} className="editor">
         <input type="title"
           placeholder={'Title'}

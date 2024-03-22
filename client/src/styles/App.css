@@ -1,7 +1,7 @@
 /*=============== GOOGLE FONTS ===============*/
-@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500&display=swap');
 
 /*=============== VARIABLES CSS ===============*/
 :root {
@@ -99,6 +99,15 @@ body {
   color: var(--second-color);
   font-family: var(--title-font);
   font-size: var(--subtitle-font-size);
+  font-weight: var(--title-font-weight);
+}
+
+h1 {
+  font-weight: var(--title-font-weight);
+}
+
+h2 {
+  font-weight: var(--title-font-weight);
 }
 
 p {
@@ -118,24 +127,7 @@ img {
   max-width: 100%;
 }
 
-.project h2 {
-  font-size: var(--subtitle-font-size);
-}
-
-.main_title h1 
-.project h2,
-.project .texts a,
-.content h1,
-.content h2,
-.content h3,
-.contact_info,
-.create_title {
-  font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
-  color: var(--second-color);
-}
-
-.cv_button a,
+.cv_btn a,
 .form_btn,
 .login_btn {
   background-color: var(--first-color);
@@ -147,7 +139,7 @@ img {
   transition: all 0.2s ease-in;
 }
 
-.cv_button a,
+.cv_btn a,
 .form_btn {
   font-size: var(--btn-font-size);
   width: 220px;
@@ -212,6 +204,14 @@ header {
   text-decoration: underline;
 }
 
+.nav_logo {
+  text-decoration: underline;
+}
+
+.nav_logo:hover {
+  color: var(--first-color);
+}
+
 .nav_logo, 
 .nav_toggle svg:hover,
 .nav_close svg:hover {
@@ -220,14 +220,15 @@ header {
 
 /*=============== HOME PAGE ===============*/
 .main_title h1 {
+  color: var(--first-color);
   font-family: var(--title-font);
-  font-weight: var(--title-font-weight);
   font-size: var(--main-title-font-size);
   letter-spacing: -0.2rem;
   text-align: left;
 }
   
 .main_title h2 {
+  color: var(--first-color);
   font-family: var(--extra-font);
   font-weight: var(--body-font-weight);
   font-size: var(--main-subtitle-font-size);
@@ -248,14 +249,14 @@ header {
 .skills_section,
 .skills_column_skills,
 .skills_list,
-.cv_button {
+.cv_btn {
   display: flex;
 }
 
 .skills_column_skills,
 .skills_column_text,
 .skills_text,
-.cv_button {
+.cv_btn {
   flex: 1;
 }
 
@@ -291,13 +292,13 @@ header {
   font-size: 1.2rem;
 }
 
-.cv_button {
+.cv_btn {
   justify-content: center;
   align-items: center;
   text-align: center;
 }
 
-.cv_button a:hover {
+.cv_btn a:hover {
   background-color: var(--body-color);
   color: var(--second-color);
   border: 0.2rem solid var(--second-color);
@@ -307,7 +308,7 @@ header {
 
 .skills,
 .experience,
-.cv_button {
+.cv_btn {
   padding-top: var(--padding-top);
 }
 
@@ -320,7 +321,6 @@ header {
 }
 
 .project h2 {
-  font-size: var(--subtitle-font-size);
   margin-bottom: 2rem;
 }
 
@@ -351,35 +351,8 @@ header {
 }
 
 /*=============== PROJECT PAGE ===============*/
-.content h1{
-  font-size: var(--title-font-size);
-}
-
-.content h2 {
-  line-height: 2.6rem;
-}
-
-.content h3 {
-  text-align: center;
-}
-
-.content h2,
-.content h3 {
-  font-size: var(--subtitle-font-size);
-}
-
-.content a {
-  font-family: var(--extra-font);
-  font-weight: 500;
-  font-size: 1.2rem;
-  display: block; 
-  text-align: center;
-  text-decoration: none;
-}
-
 .content a:hover {
   text-decoration: underline;
-
 }
 
 /*=============== CONTACT PAGE ===============*/
@@ -482,11 +455,15 @@ textarea:hover {
   color: var(--second-color);
   background-color: var(--body-color);
   border: 0.2rem solid var(--second-color);
-  box-shadow: 0.5rem 0.5rem 0 hsla(0, 0%, 0%, 0.473);
+  box-shadow: 0.5rem 0.5rem 0 hsla(212, 100%, 27%, 0.838);
   transform: translateX(-5px) translateY(-5px);
 }
 
 /*=============== EDITOR ===============*/
+.editor {
+  margin-top: 3.5rem
+}
+
 .editor input{
   display: block;
   padding: 15px 10px;
@@ -508,13 +485,55 @@ textarea:hover {
   border: 2px solid var(--first-color);
 }
 
+/*=============== EDITOR TOOL BAR ===============*/
+
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="Montserrat, sans-serif"]::before,
+.ql-snow .ql-picker.ql-font .ql-picker-label::before {
+  content: 'Montserrat';
+  font-family: 'Montserrat', sans-serif !important;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="Syne, sans-serif"]::before {
+  content: 'Syne';
+  font-family: 'Syne', sans-serif !important;
+}
+
+.ql-snow .ql-picker.ql-font .ql-picker-item[data-value="Roboto Mono, monospace"]::before {
+  content: 'Roboto Mono';
+  font-family: 'Roboto Mono', monospace !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="1.3rem"]::before,
+.ql-snow .ql-picker.ql-size .ql-picker-label::before {
+  content: 'Body';
+  font-size: 1.3rem !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="2.3rem"]::before {
+  content: 'Subtitle';
+  font-size: 2.3rem !important;
+}
+
+.ql-snow .ql-picker.ql-size .ql-picker-item[data-value="5rem"]::before {
+  content: 'Title';
+  font-size: 5rem !important;
+}
+
+.ql-snow .ql-picker.ql-color .ql-picker-item[data-value="#212121"]::before {
+  color: #212121 !important;
+}
+
+.ql-snow .ql-picker.ql-color .ql-picker-item[data-value="#003F88"]::before {
+  color: #003F88 !important;
+}
+
+.ql-snow .ql-picker.ql-color .ql-picker-item[data-value="#F9F4EC"]::before {
+  color: #F9F4EC !important;
+}
+
 /*=============== CREATE, EDIT, DELETE ===============*/
 div.edit_row{
   margin-bottom: -2.5rem;
-}
-
-.create_title {
-  padding-bottom: 3rem;
 }
 
 .edit_btn {
@@ -588,6 +607,7 @@ div.edit_row{
 }
 
 .login_title {
+  font-family: var(--title-font);
   text-align: center;
   font-size: 2.4rem;
   color: var(--first-color);

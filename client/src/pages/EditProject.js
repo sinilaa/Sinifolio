@@ -65,6 +65,7 @@ export default function EditProject() {
   // Render form using the Editor component for updating project
   return (
     <div className="main container">
+    <h2 className="subtitle">Editing...</h2> 
       <form onSubmit={updateProject} className="editor">
         <input
           type="title"
