@@ -19,6 +19,7 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 - **Mongoose**
 - **React Router**
 - **Remix Icon**
+- **Heroicons**
 - **Bcrypt.js**
 - **Cookie Parser**
 - **Cors**
