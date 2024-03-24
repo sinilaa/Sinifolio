@@ -40,12 +40,13 @@
 
 /*========== Responsive typography ==========*/
 /* RESPONSIVE FOR SMALL DEVICES */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   :root {
-    --title-font-size: 3rem;
+    --body-font-size: 1rem;
+    --title-font-size: 2.5rem;
     --subtitle-font-size: 1.5rem;
-    --main-title-font-size: 3rem;
-    --main-subtitle-font-size: 1rem;
+    --main-title-font-size: 2.5rem;
+    --main-subtitle-font-size: 0.8rem;
   }
 }
 
@@ -102,16 +103,9 @@ body {
   font-weight: var(--title-font-weight);
 }
 
-h1 {
-  font-weight: var(--title-font-weight);
-}
-
+h1,
 h2 {
   font-weight: var(--title-font-weight);
-}
-
-p {
-  line-height: 2rem;
 }
 
 a {
@@ -242,10 +236,6 @@ header {
 }
 
 /*=============== ABOUT PAGE ===============*/
-.introduction .subtitle {
-  line-height: 2.6rem;
-}
-
 .skills_section,
 .skills_column_skills,
 .skills_list,
@@ -288,10 +278,6 @@ header {
   border-radius: 0.6rem;
 }
 
-.skills_text {
-  font-size: 1.2rem;
-}
-
 .cv_btn {
   justify-content: center;
   align-items: center;
@@ -306,8 +292,6 @@ header {
   transform: translateX(-5px) translateY(-5px);
 }
 
-.skills,
-.experience,
 .cv_btn {
   padding-top: var(--padding-top);
 }
@@ -692,8 +676,17 @@ div.edit_row{
 }
 
 /*=============== MEDIA QUERIES ===============*/
-/* RESPONSIVE FOR SMALL DEVICES */
+/* RESPONSIVE FOR SMALL & MEDIUM DEVICES */
 @media screen and (max-width: 1023px) {
+  .nav_menu {
+    background-color: var(--body-color);
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    padding-block: 4.5rem 4rem;
+    transition: top .4s;
+  }
   .main {
     padding-top: calc(var(--padding-top) - 3rem);
     padding-bottom: calc(var(--padding-bottom) + 5rem);
@@ -707,14 +700,40 @@ div.edit_row{
   .skills_text {
     margin-top: 1rem;
   }
-  .nav_menu {
-    background-color: var(--body-color);
-    position: fixed;
-    top: -100%;
-    left: 0;
-    width: 100%;
-    padding-block: 4.5rem 4rem;
-    transition: top .4s;
+  .contact_form {
+    display: flex;
+    flex: 1;
+    justify-content: center;
+  }
+  .form_container,
+  .login {
+    padding: 2rem;
+    max-width: 400px;
+  }
+  .login_title {
+    font-size: 1.5rem;
+  }
+  .form_element
+  .login_element {
+    font-size: 1rem; 
+  }
+  .form_element input,
+  .form_element textarea,
+  .login_input {
+    font-size: 0.8rem;
+    padding: 1rem 1.8rem; 
+  }
+  .login_btn {
+    font-size: 0.8rem;
+    width: 100px;
+    padding: 1rem;
+    margin-top: 0.1rem;
+  }
+  .cv_btn a,
+  .form_btn {
+    width: 160px;
+    padding: 1rem;
+    font-size: 1.2rem;
   }
   .footer {
     box-shadow: 0 8px 16px hsla(0, 0%, 52%, 0.961);
@@ -727,9 +746,10 @@ div.edit_row{
   .footer_social {
     justify-content: center;
     height: calc(var(--footer-height) - 2rem);
+    column-gap: 1.8rem;
   }
-  .footer_link {
-    font-size: calc(var(--social-font-size) - 0.2rem);
+  .footer_link svg {
+    height: 1.4rem;
   }
 }
 

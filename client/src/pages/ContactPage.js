@@ -48,8 +48,8 @@ export default function ContactPage() {
           </a>
         </div>
       </div>
-
-        <h2 className="subtitle">Send me a message!</h2>
+      
+        <h2 className="message subtitle">Send me a message!</h2>
         {/* Renders contact from the ContactForm component */}
         <ContactForm />
       </div>
