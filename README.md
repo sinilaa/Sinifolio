@@ -26,6 +26,7 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 - **Email.js**
 - **JSON Web Token**
 - **Multer**
+- **Quill.js**
 
 
 ## File Structure
