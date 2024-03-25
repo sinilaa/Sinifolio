@@ -2,6 +2,7 @@ import ReactQuill from "react-quill";
 import { Quill } from "react-quill";
 import "react-quill/dist/quill.snow.css";
 
+// Import necessary styles and settings for text editor formatting
 const AlignStyle = Quill.import('attributors/style/align');
 Quill.register(AlignStyle, true);
 
@@ -17,6 +18,7 @@ const Color = Quill.import('attributors/style/color');
 Color.whitelist = ['#212121', '#003F88', '#F9F4EC'];
 Quill.register(Color, true);
 
+// Define allowed formats for the text editor
 const formats = [
   'header',
   'bold', 'italic', 'underline', 'strike', 'blockquote',
@@ -24,7 +26,7 @@ const formats = [
   'link', 'image',
   'align',
   'font',
-  'size',  // Lisätään kokoattribuutti
+  'size',
   'clean',
   'color',
 ];
@@ -46,7 +48,7 @@ export default function Editor({ value, onChange }) {
       ['link', 'image'],
       [{ 'align': [] }],
       [{ 'font': ['Montserrat, sans-serif', 'Syne, sans-serif', 'Roboto Mono, monospace'] }],
-      [{ 'size': ['1.3rem', '2.3rem', '5rem'] }], // Lisää fonttikoot
+      [{ 'size': ['1.3rem', '2.3rem', '5rem'] }],
       ['clean'],
     ],
   };
