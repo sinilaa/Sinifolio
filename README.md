@@ -177,3 +177,10 @@ sinifolio/
     - Defines the schema for the Project model using Mongoose.
     - Defines the ProjectSchema with fields like title, summary, content, cover image, and author reference.
     - Creates the Project model using the schema and exports it for use in other files.
+
+### Contexts
+
+- **UserContext**
+    - Manages user information using React context API.
+    - UserContextProvider component wraps its children components and provides access to user information through the UserContext.
+  
