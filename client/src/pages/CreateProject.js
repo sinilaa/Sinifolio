@@ -1,6 +1,7 @@
 import 'react-quill/dist/quill.snow.css';
 import { useState } from "react";
 import { Navigate } from "react-router-dom";
+import { Helmet } from 'react-helmet';
 import Editor from "../components/Editor";
 
 // Component for creating a new project
@@ -45,6 +46,11 @@ export default function CreateProject() {
   // Render form for creating a new project
   return (
     <div className="main container">
+      <Helmet>
+        <title>Create project</title>
+        <meta name="description" content="This page is for creating new projects" />
+      </Helmet>
+
     <h2 className="subtitle">Create new project!</h2>    
       <form onSubmit={createNewProject} className="editor">
         <input type="title"

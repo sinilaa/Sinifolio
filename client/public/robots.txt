@@ -1,0 +1,10 @@
+User-agent: *
+
+Allow: /
+Allow: /about
+Allow: /contact
+Allow: /projects
+Allow: /project/:id
+Disallow: /login
+Disallow: /create
+Disallow: /edit/:id

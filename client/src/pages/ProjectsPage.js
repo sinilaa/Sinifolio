@@ -1,5 +1,6 @@
 import Project from "../components/Project";
 import { useEffect, useState } from "react";
+import { Helmet } from "react-helmet";
 
 // Component for displaying a list of projects
 export default function ProjectsPage() {
@@ -20,11 +21,16 @@ export default function ProjectsPage() {
   return (
     <>
       <div className="main container">
-        <h1 className="title">Projects</h1>
-        {/* Render each project using the Project component */}
-        {projects.length > 0 && projects.map(project => (
-          <Project key={project.id} {...project} />
-        ))}
+        <Helmet>
+          <title>Projects page</title>
+          <meta name="description" content="This page present all projects" />
+        </Helmet>
+
+      <h1 className="title">Projects</h1>
+      {/* Render each project using the Project component */}
+      {projects.length > 0 && projects.map(project => (
+        <Project key={project.id} {...project} />
+      ))}
       </div>
     </>
   );

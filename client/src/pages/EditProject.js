@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { Navigate, useParams } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import Editor from "../components/Editor";
 
 // Component for editing a project
@@ -65,6 +66,11 @@ export default function EditProject() {
   // Render form using the Editor component for updating project
   return (
     <div className="main container">
+      <Helmet>
+        <title>Edit project</title>
+        <meta name="description" content="This page is for editing projects" />
+      </Helmet>
+
     <h2 className="subtitle">Editing...</h2> 
       <form onSubmit={updateProject} className="editor">
         <input

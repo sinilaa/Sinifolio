@@ -1,9 +1,16 @@
+import { Helmet } from "react-helmet";
+
 // Functional component representing the About page
 export default function AboutPage() {
   
   return (
     <div className="main container">
-      <h1 className="title">About me</h1>
+      <Helmet>
+        <title>About me</title>
+        <meta name="description" content="This page is about me and my skills" />
+      </Helmet>
+
+    <h1 className="title">About me</h1>
       <div className="introduction">
         <h2 className="subtitle">Here is information about me. 
         Who I am, what my skills are, what I'm passionate about and what I have to offer.</h2><br />

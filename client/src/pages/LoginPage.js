@@ -1,5 +1,6 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
+import { Helmet } from "react-helmet";
 import { UserContext } from "../contexts/UserContext";
 
 // Component for user login
@@ -54,36 +55,41 @@ export default function LoginPage() {
   // Render login form
   return (
     <div className="main container">
-      <form className="login" onSubmit={login}>
-        <h1 className="login_title">Login</h1>
-        <div className="login_element">
-          <label>Username</label>
-          <input
-            className="login_input"
-            type="text"
-            placeholder="Username"
-            value={username}
-            onChange={ev => setUsername(ev.target.value)}
-          />
-          <div className="error_message">{usernameError}</div>
-        </div>
+      <Helmet>
+        <title>Login page</title>
+        <meta name="description" content="This is login page" />
+      </Helmet>
 
-        <div className="login_element">
-          <label>Password</label>
-          <input
-            className="login_input"
-            type="password"
-            placeholder="Password"
-            value={password}
-            onChange={ev => setPassword(ev.target.value)}
-          />
-          <div className="error_message">{passwordError}</div>
-        </div>
+    <form className="login" onSubmit={login}>
+      <h1 className="login_title">Login</h1>
+      <div className="login_element">
+        <label>Username</label>
+        <input
+          className="login_input"
+          type="text"
+          placeholder="Username"
+          value={username}
+          onChange={ev => setUsername(ev.target.value)}
+        />
+        <div className="error_message">{usernameError}</div>
+      </div>
 
-        <div className="error_message">{error}</div> {/* Display server error message */}
-        
-        <button className="login_btn">Login</button>
-      </form>
-    </div>
+      <div className="login_element">
+        <label>Password</label>
+        <input
+          className="login_input"
+          type="password"
+          placeholder="Password"
+          value={password}
+          onChange={ev => setPassword(ev.target.value)}
+        />
+        <div className="error_message">{passwordError}</div>
+      </div>
+
+      <div className="error_message">{error}</div> {/* Display server error message */}
+      
+      <button className="login_btn">Login</button>
+    </form>
+  </div>
   );
 }
