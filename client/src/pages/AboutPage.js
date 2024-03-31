@@ -1,5 +1,6 @@
 import { Helmet } from "react-helmet";
 
+
 // Functional component representing the About page
 export default function AboutPage() {
   
@@ -10,22 +11,28 @@ export default function AboutPage() {
         <meta name="description" content="This page is about me and my skills" />
       </Helmet>
 
-    <h1 className="title">About me</h1>
       <div className="introduction">
-        <h2 className="subtitle">Here is information about me. 
-        Who I am, what my skills are, what I'm passionate about and what I have to offer.</h2><br />
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Tempora, nihil officiis iste molestiae, 
-        sequi reiciendis iure corporis quo ratione modi rerum! 
-        Veritatis facilis amet facere sed rem, quia sit impedit. 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /><br />
-        Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
-        Dolorem voluptas dolorum laboriosam, 
-        reiciendis, expedita possimus voluptatem saepe molestias animi consequatur amet 
-        deserunt modi debitis minus tempore sit, exercitationem iste culpa. 
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-        A architecto, fuga nam et quae magnam id, maxime reiciendis eius porro, 
-        impedit sint nulla totam vel praesentium fugit aliquam ab facere.</p>
+        <div className="introduction_quote">
+          <h1 className="title">About me</h1>
+          <h2 className="subtitle">Here is information about me. 
+          Who I am, what my skills are, what I'm passionate about and what I have to offer.</h2><br />
+        </div>
+        <img src="/assets/sinilaamanen.jpg" alt="Sini Laamanen" className="profile_img" width="420" height="560"></img>
+      </div>
+
+        <div className="introduction_text">
+          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. 
+          Tempora, nihil officiis iste molestiae, 
+          sequi reiciendis iure corporis quo ratione modi rerum! 
+          Veritatis facilis amet facere sed rem, quia sit impedit. 
+          Lorem ipsum dolor sit amet consectetur adipisicing elit.<br /><br />
+          Lorem, ipsum dolor sit amet consectetur adipisicing elit. 
+          Dolorem voluptas dolorum laboriosam, 
+          reiciendis, expedita possimus voluptatem saepe molestias animi consequatur amet 
+          deserunt modi debitis minus tempore sit, exercitationem iste culpa. 
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
+          A architecto, fuga nam et quae magnam id, maxime reiciendis eius porro, 
+          impedit sint nulla totam vel praesentium fugit aliquam ab facere.</p>
       </div>
 
       <div className="skills">
@@ -73,7 +80,7 @@ export default function AboutPage() {
 
         {/* CV download button */}
         <div className="cv_btn">
-          <a href="/assets/CV.pdf" target="_blank" rel="noopener noreferrer">CV</a>
+          <a href="/assets/CV.pdf" alt="cv" target="_blank" rel="noopener noreferrer">CV</a>
         </div> 
       </div>
     </div>

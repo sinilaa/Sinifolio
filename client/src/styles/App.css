@@ -40,13 +40,23 @@
 
 /*========== Responsive typography ==========*/
 /* RESPONSIVE FOR SMALL DEVICES */
-@media screen and (max-width: 700px) {
+@media screen and (max-width: 330px) {
   :root {
     --body-font-size: 1rem;
-    --title-font-size: 2.5rem;
-    --subtitle-font-size: 1.5rem;
-    --main-title-font-size: 2.5rem;
-    --main-subtitle-font-size: 0.8rem;
+    --title-font-size: 1.8rem;
+    --subtitle-font-size: 1.4rem;
+    --main-title-font-size: 2rem;
+    --main-subtitle-font-size: 0.7rem;
+  }
+}
+
+@media screen and (max-width: 660px) and (min-width: 331px) {
+  :root {
+    --body-font-size: 1.1rem;
+    --title-font-size: 3rem;
+    --subtitle-font-size: 1.8rem;
+    --main-title-font-size: 3.5rem;
+    --main-subtitle-font-size: 1.1rem;
   }
 }
 
@@ -59,6 +69,7 @@
   
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
   
 body {
@@ -101,6 +112,10 @@ body {
   font-family: var(--title-font);
   font-size: var(--subtitle-font-size);
   font-weight: var(--title-font-weight);
+}
+
+p {
+  line-height: 2rem;
 }
 
 h1,
@@ -236,6 +251,20 @@ header {
 }
 
 /*=============== ABOUT PAGE ===============*/
+.introduction {
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.profile_img {
+  max-width: 100%;
+  height: auto;
+  align-self: flex-start;
+}
+
+.introduction,
 .skills_section,
 .skills_column_skills,
 .skills_list,
@@ -243,13 +272,14 @@ header {
   display: flex;
 }
 
+.introduction .title,
+.introduction_quote,
 .skills_column_skills,
 .skills_column_text,
 .skills_text,
 .cv_btn {
   flex: 1;
 }
-
 
 .skills_section {
   justify-content: space-between;
@@ -689,6 +719,21 @@ div.edit_row{
 }
 
 /*=============== MEDIA QUERIES ===============*/
+@media screen and (max-width: 760px) {
+  .introduction {
+    align-items: center;
+    flex-direction: column;
+    margin-bottom: 2rem;
+  }
+  .profile_img {
+    align-self: center;
+    margin-bottom: 2rem;
+  }
+  .introduction_quote .subtitle {
+    text-align: center;
+  }
+}
+
 /* RESPONSIVE FOR SMALL & MEDIUM DEVICES */
 @media screen and (max-width: 1023px) {
   .nav_menu {
@@ -792,7 +837,10 @@ div.edit_row{
 }
 
 /* RESPONSIVE FOR LARGE DEVICES */
-@media screen and (min-width: 1023px) {
+@media screen and (min-width: 1024px) {
+  p {
+    line-height: 2rem;
+  }  
   .nav {
     height: calc(var(--header-height) + 2rem);
     column-gap: 3rem;
