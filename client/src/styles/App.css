@@ -49,7 +49,6 @@
     --main-subtitle-font-size: 0.7rem;
   }
 }
-
 @media screen and (max-width: 660px) and (min-width: 331px) {
   :root {
     --body-font-size: 1.1rem;
@@ -253,15 +252,14 @@ header {
 /*=============== ABOUT PAGE ===============*/
 .introduction {
   justify-content: space-between;
-  align-items: flex-end;
-  gap: 2rem;
+  gap: 3rem;
   margin-bottom: 4rem;
+  align-items: flex-end;
 }
 
 .profile_img {
   max-width: 100%;
   height: auto;
-  align-self: flex-start;
 }
 
 .introduction,
@@ -272,7 +270,6 @@ header {
   display: flex;
 }
 
-.introduction .title,
 .introduction_quote,
 .skills_column_skills,
 .skills_column_text,
@@ -283,7 +280,7 @@ header {
 
 .skills_section {
   justify-content: space-between;
-  gap: 2rem;
+  gap: 3rem;
 }
 
 .skills_column_skills {
@@ -292,7 +289,6 @@ header {
 
 .skills_list {
   flex-wrap: wrap;
-  gap: 10px;
 }
 
 .skill_name {
@@ -300,12 +296,12 @@ header {
   color: var(--body-color);
   font-family: var(--extra-font);
   font-weight: var(--subtitle-font-weight);
-  font-size: 1.2rem;
-  flex-basis: calc(33.33% - 20px);
-  width: 50px;
-  padding: 20px;
+  font-size: 1.5rem;
+  padding: 1.5rem;
+  margin-right: 0.8rem;
+  margin-bottom: 0.8rem;
   text-align: center;
-  border-radius: 0.6rem;
+  border-radius: 0.8rem;
 }
 
 .cv_btn {
@@ -513,7 +509,6 @@ textarea:hover {
 }
 
 /*=============== EDITOR TOOL BAR ===============*/
-
 .ql-snow .ql-picker.ql-font .ql-picker-item[data-value="Montserrat, sans-serif"]::before,
 .ql-snow .ql-picker.ql-font .ql-picker-label::before {
   content: 'Montserrat';
@@ -719,6 +714,7 @@ div.edit_row{
 }
 
 /*=============== MEDIA QUERIES ===============*/
+/* RESPONSIVE FOR SMALL DEVICE */
 @media screen and (max-width: 760px) {
   .introduction {
     align-items: center;
@@ -752,11 +748,8 @@ div.edit_row{
   .skills_section {
     flex-direction: column;
   }
-  .skills_column {
-    width: 100%;
-  }
   .skills_text {
-    margin-top: 1rem;
+    margin-top: 2rem;
   }
   .contact_form {
     display: flex;
@@ -863,8 +856,7 @@ div.edit_row{
   .contact_information {
     margin-right: 15rem;
   }
-  div.project,
-  .skills_section {
+  div.project {
     grid-template-columns: .9fr 1.1fr;
   }
 }

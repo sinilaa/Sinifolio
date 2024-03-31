@@ -43,12 +43,12 @@ export default function AboutPage() {
               <div class="skill_name">HTML</div>
               <div class="skill_name">CSS</div>
               <div class="skill_name">JavaScript</div>
+              <div class="skill_name">WordPress</div>
               <div class="skill_name">SQL</div>
+              <div class="skill_name">MongoDb</div>
+              <div class="skill_name">Figma</div>
               <div class="skill_name">Git</div>
               <div class="skill_name">GitHub</div>
-              <div class="skill_name">Figma</div>
-              <div class="skill_name">Scrum</div>
-              <div class="skill_name">WordPress</div>
             </div>
           </div>
 
