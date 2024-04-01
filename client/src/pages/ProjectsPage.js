@@ -2,6 +2,8 @@ import Project from "../components/Project";
 import { useEffect, useState } from "react";
 import { Helmet } from "react-helmet";
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+
 // Component for displaying a list of projects
 export default function ProjectsPage() {
   // State to hold the list of projects
@@ -9,7 +11,7 @@ export default function ProjectsPage() {
 
   // Fetch projects data on component mount
   useEffect(() => {
-    fetch('http://localhost:4000/project')
+    fetch(`${API_URL}/project`)
       .then(response => {
         response.json().then(projects => {
           setProjects(projects); // Update projects state with fetched data

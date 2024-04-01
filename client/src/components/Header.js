@@ -3,6 +3,9 @@ import { Link, useNavigate } from "react-router-dom";
 import { useContext, useEffect } from "react";
 import { UserContext } from "../contexts/UserContext";
 
+// Sets the API URL based on the environment variable 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+
 // Functional component representing the header of the application
 export default function Header() {
   const { setUserInfo, userInfo } = useContext(UserContext);
@@ -23,7 +26,7 @@ export default function Header() {
 
   // Fetch user profile information on component mount
   useEffect(() => {
-    fetch('http://localhost:4000/profile', {
+    fetch(`${API_URL}/profile`, {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
@@ -34,7 +37,7 @@ export default function Header() {
 
   // Function to handle user logout
   function logout() {
-    fetch('http://localhost:4000/logout', {
+    fetch(`${API_URL}/logout`, {
       credentials: 'include',
       method: 'POST',
     }).then(() => {

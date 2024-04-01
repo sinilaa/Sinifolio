@@ -9,6 +9,8 @@ const jwt = require('jsonwebtoken');
 const cookieParser = require('cookie-parser');
 const multer = require('multer');
 const fs = require('fs');
+const dotenv = require('dotenv');
+dotenv.config();
 
 const uploadMiddleware = multer({ dest: 'uploads/' });
 
@@ -21,8 +23,8 @@ app.use(cookieParser());
 // Serve static files
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-// Connect to MongoDB database
-mongoose.connect('mongodb+srv://sinil:ByV7lmRi3YMVy7mi@managmentsystem.zblw1ey.mongodb.net/projectmanager?retryWrites=true&w=majority&appName=ManagmentSystem');
+// Connect to MongoDB database using environment variable for URI
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Hashing salt for bcrypt and JWT secret
 const secret = 'asdfe45we45w345wegw345werjktjwertkj';
@@ -168,5 +170,19 @@ app.delete('/project/:id', async (req, res) => {
   }
 });
 
+// Fetch EmailJS configuration from environment variables
+app.get('/api/emailjs/config', (req, res) => {
+  // Construct EmailJS configuration object from environment variables
+  const emailjsConfig = {
+    service_id: process.env.EMAILJS_SERVICE_ID,
+    template_id: process.env.EMAILJS_TEMPLATE_ID,
+    public_key: process.env.EMAILJS_PUBLIC_KEY,
+  };
+  res.json(emailjsConfig);
+});
+
+
 // Start the server on port 4000
-app.listen(4000);
+app.listen(process.env.API_PORT);
+
+module.exports = app;

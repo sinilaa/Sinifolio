@@ -3,6 +3,8 @@ import { useParams, useNavigate, Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import { UserContext } from "../contexts/UserContext";
 
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+
 // Component for displaying project details
 export default function ProjectPage() {
   const [projectInfo, setProjectInfo] = useState(null);
@@ -18,7 +20,7 @@ export default function ProjectPage() {
   // Function to fetch project information
   async function fetchProjectInfo() {
     try {
-      const response = await fetch(`http://localhost:4000/project/${id}`);
+      const response = await fetch(`${API_URL}/project/${id}`);
       if (!response.ok) {
         throw new Error('Error fetching project information');
       }
@@ -32,7 +34,7 @@ export default function ProjectPage() {
   // Function to handle project deletion
   async function handleDelete() {
     try {
-      const response = await fetch(`http://localhost:4000/project/${id}`, {
+      const response = await fetch(`${API_URL}/project/${id}`, {
         method: 'DELETE',
         credentials: 'include',
       });

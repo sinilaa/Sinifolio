@@ -1,16 +1,26 @@
 import emailjs from 'emailjs-com';
-
-// EmailJS configuration constants
-const SERVICE_ID = "service_gq17svb";
-const TEMPLATE_ID = "template_umsh6d3";
-const PUBLIC_KEY = "Mf0yPvI0gJ-z-Rik6";
+import { useEffect, useState } from 'react';
 
 // Function to handle form submission
 export default function ContactForm() {
+  const [emailjsConfig, setEmailjsConfig] = useState({});
+
+  useEffect(() => {
+    // Fetch EmailJS configuration from the API
+    fetch('http://localhost:4000/api/emailjs/config')
+      .then(response => response.json())
+      .then(data => {
+        setEmailjsConfig(data); // Set EmailJS configuration data
+      })
+      .catch(error => {
+        console.error('Error fetching EmailJS config:', error);
+      });
+  }, []);
+
   const handleOnSubmit = (e) => {
     e.preventDefault();
     // Send form data using EmailJS
-    emailjs.sendForm(SERVICE_ID, TEMPLATE_ID, e.target, PUBLIC_KEY)
+    emailjs.sendForm(emailjsConfig.service_id, emailjsConfig.template_id, e.target, emailjsConfig.public_key)
       .then(() => {
         alert('Message Sent Successfully'); // When message is sent successfully show success message
       }, (error) => {
