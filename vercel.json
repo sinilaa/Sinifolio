@@ -2,22 +2,21 @@
     "version": 2,
     "builds": [
         {
-            "src": "client/**/*.js", // frontend build path
-            "use": "@vercel/static-build" // or another appropriate builder for your frontend (e.g., Next.js builder)
-        },
+            "src": "client/**/*.js",
+            "use": "@vercel/static-build" 
         {
-            "src": "api/**/*.js", // backend build path
+            "src": "api/**/*.js", 
             "use": "@vercel/node"
         }
     ],
     "routes": [
         {
-            "src": "/api/(.*)", // route for backend API calls
-            "dest": "api/index.js" // backend entry point
+            "src": "/api/(.*)",
+            "dest": "api/index.js"
         },
         {
             "src": "/(.*)",
-            "dest": "client/public/$1" // route for frontend
+            "dest": "client/public/$1"
         }
     ]
 }
