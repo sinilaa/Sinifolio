@@ -13,6 +13,7 @@ const dotenv = require('dotenv');
 dotenv.config();
 
 const uploadMiddleware = multer({ dest: 'uploads/' });
+const port = process.env.API_PORT || 4000;
 
 // Add CORS middleware and specify allowed origins
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
@@ -183,9 +184,10 @@ app.get('/api/emailjs/config', (req, res) => {
 
 
 // Start the server on port 4000
-if (process.env.API_PORT) {
-  app.listen(process.env.API_PORT);
-}
+app.listen(port, () => {
+  // tslint:disable-next-line:no-console
+  console.log(`Server started at http://localhost:${port}`);
+});
 
 
 module.exports = app;
