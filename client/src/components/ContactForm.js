@@ -10,7 +10,7 @@ export default function ContactForm() {
     fetch('http://localhost:4000/api/emailjs/config')
       .then(response => response.json())
       .then(data => {
-        setEmailjsConfig(data); // Set EmailJS configuration data
+        setEmailjsConfig(data); // Set Emailjs configuration data
       })
       .catch(error => {
         console.error('Error fetching EmailJS config:', error);
