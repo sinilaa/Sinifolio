@@ -3,3 +3,5 @@ api/.env
 .idea
 node_modules
 api/uploads/*
+
+.vercel
