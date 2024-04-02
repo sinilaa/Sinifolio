@@ -183,6 +183,10 @@ app.get('/api/emailjs/config', (req, res) => {
 
 
 // Start the server on port 4000
-app.listen(process.env.API_PORT);
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}`);
+});
+
 
 module.exports = app;
