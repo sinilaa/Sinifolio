@@ -1,7 +1,16 @@
+# Ignore .env files
 .env
 api/.env
+
+# Ignore IDE specific files
 .idea
+
+# Ignore node_modules directory
 node_modules
+
+
+# Ignore uploaded files in the api/uploads directory
 api/uploads/*
 
-.vercel
+# Ignore Vercel build output
+.vercel/
