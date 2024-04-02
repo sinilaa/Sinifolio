@@ -182,6 +182,10 @@ app.get('/api/emailjs/config', (req, res) => {
   res.json(emailjsConfig);
 });
 
+app.get('/home', (req, res) => {
+  res.status(200).json('Welcome, your app is working well');
+})
+
 
 // Start the server on port 4000
 app.listen(port, () => {
