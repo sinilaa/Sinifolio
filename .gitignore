@@ -11,6 +11,3 @@ node_modules
 
 # Ignore uploaded files in the api/uploads directory
 api/uploads/*
-
-# Ignore Vercel build output
-.vercel
