@@ -182,11 +182,6 @@ app.get('/api/emailjs/config', (req, res) => {
   res.json(emailjsConfig);
 });
 
-app.get('/api',(req,res)=>{ 
-  res.send(`<h5 style="color:green"> 
-      Hey Geek! you just deployed serverless express api</h5>`) 
-}) 
-
 // Start the server on port 4000
 app.listen(port, () => {
   // tslint:disable-next-line:no-console
