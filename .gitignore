@@ -13,4 +13,4 @@ node_modules
 api/uploads/*
 
 # Ignore Vercel build output
-.vercel
+vercel.json
