@@ -1,6 +1,5 @@
 import { Helmet } from "react-helmet";
 
-
 // Functional component representing the About page
 export default function AboutPage() {
   
