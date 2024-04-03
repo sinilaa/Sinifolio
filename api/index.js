@@ -181,8 +181,9 @@ app.get('/api/emailjs/config', (req, res) => {
   res.json(emailjsConfig);
 });
 
-if (process.env.API_PORT) {
-  app.listen(process.env.API_PORT);
-}
+const PORT = process.env.PORT || 4000;
+app.listen(PORT, () => {
+  console.log(`Server listening on port ${PORT}`);
+});
 
 module.exports = app;
