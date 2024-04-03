@@ -14,7 +14,7 @@ dotenv.config();
 
 const uploadMiddleware = multer({ dest: 'uploads/' });
 
-// Add CORS middleware and specify allowed origin
+// Add CORS middleware and specify allowed origins
 app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
 // Parse request body to JSON
 app.use(express.json());
