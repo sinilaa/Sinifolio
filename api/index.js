@@ -181,6 +181,14 @@ app.get('/api/emailjs/config', (req, res) => {
   res.json(emailjsConfig);
 });
 
+app.get('/', (req, res) => {
+  res.send('Hey this is my API running 🥳')
+})
+
+app.get('/about', (req, res) => {
+  res.send('This is my about route..... ')
+})
+
 if (process.env.API_PORT) {
   app.listen(process.env.API_PORT);
 }
