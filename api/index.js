@@ -27,7 +27,7 @@ app.use('/uploads', express.static(__dirname + '/uploads'));
 mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Hashing salt for bcrypt and JWT secret
-const secret = 'asdfe45we45w345wegw345werjktjwertkj';
+const secret = process.env.TOKEN_SECRET;
 
 // User login
 app.post('/login', async (req, res) => {
@@ -179,11 +179,6 @@ app.get('/api/emailjs/config', (req, res) => {
     public_key: process.env.EMAILJS_PUBLIC_KEY,
   };
   res.json(emailjsConfig);
-});
-
-app.use(cors());
-app.get('/api/test', (req, res) => {
-  res.json('hello world 2 '+Date.now());
 });
 
 if (process.env.API_PORT) {
