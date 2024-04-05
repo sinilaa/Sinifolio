@@ -30,6 +30,10 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 
 
 ## File Structure
+## Backend folder
+**Api**
+## Fronend folder
+**Client**
 
 ```
 sinifolio/
