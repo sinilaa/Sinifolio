@@ -30,6 +30,10 @@ This project is a personal web portfolio showcasing my work and skills as a web 
 
 
 ## File Structure
+### Backend folder
+- **Api**
+### Fronend folder
+- **Client**
 
 ```
 sinifolio/
@@ -92,7 +96,7 @@ sinifolio/
 - **index.js**
     - Initializes the React application and renders the root component into the DOM.
 
-### Pages
+#### Pages
 
 - **HomePage.js**
     - Displays a welcome message and brief introduction.
@@ -112,7 +116,7 @@ sinifolio/
 - **EditProject.js**
     - Allows authenticated users to edit existing projects.
 
-### Components
+#### Components
 
 - **ContactForm.js**
     - Renders a contact form allowing users to send messages via EmailJS.
@@ -131,7 +135,7 @@ sinifolio/
     - Displays and renders individual project details with a title, summary, and cover image.
     - Provides a link to the detailed project page for more information.
 
-### Styles (App.css)
+#### Styles (App.css)
 
 - **Variables CSS** 
     - Defines variables for colors, fonts, sizes, and other properties used throughout the stylesheet.
@@ -167,7 +171,7 @@ sinifolio/
     - Handles user login/logout operations with JWT authentication.
     - Manages CRUD operations for projects with file uploads.
  
-### Models
+#### Models
 
 - **User.js** 
     -  Defines the schema for the User model using Mongoose.
@@ -178,7 +182,7 @@ sinifolio/
     - Defines the ProjectSchema with fields like title, summary, content, cover image, and author reference.
     - Creates the Project model using the schema and exports it for use in other files.
 
-### Contexts
+#### Contexts
 
 - **UserContext**
     - Manages user information using React context API.
