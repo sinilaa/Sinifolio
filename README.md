@@ -96,7 +96,7 @@ sinifolio/
 - **index.js**
     - Initializes the React application and renders the root component into the DOM.
 
-### Pages
+#### Pages
 
 - **HomePage.js**
     - Displays a welcome message and brief introduction.
