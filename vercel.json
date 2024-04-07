@@ -1,1 +1,10 @@
-{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/api" }] }
+{ 
+    "buildCommand": "cd client && npm run build",
+    "outputDirectory": "client/build",
+    "rewrites": [
+        {
+            "source": "/api(.*)",
+            "destination": "/api/index.js"
+        }
+    ]
+}
