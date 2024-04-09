@@ -11,6 +11,7 @@ export default function EditProject() {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const [error, setError] = useState('');
 
   // Fetch project information on component mount
   useEffect(() => {
@@ -27,6 +28,7 @@ export default function EditProject() {
       setSummary(projectInfo.summary);
     } catch (error) {
       console.error('Error fetching project information:', error);
+      setError('Failed to fetch project information. Please try again.');
     }
   }
 
@@ -48,13 +50,23 @@ export default function EditProject() {
     if (files?.[0]) {
       data.set('file', files?.[0]);
     }
-    const response = await fetch('http://localhost:4000/project', {
-      method: 'PUT',
-      body: data,
-      credentials: 'include',
-    });
-    if (response.ok) {
-      setRedirect(true); // Redirect to project page after successful update
+
+    try {
+      const response = await fetch('http://localhost:4000/project', {
+        method: 'PUT',
+        body: data,
+        credentials: 'include',
+      });
+
+      if (response.ok) {
+        setRedirect(true); // Redirect to project page after successful update
+      } else {
+        throw new Error('Failed to update project'); // Throw an error if response is not ok
+      }
+    } catch (error) {
+      console.error('Error updating project:', error); // Log the error to console
+      // Set error message to state
+      setError('Failed to update project. Please try again.');
     }
   }
 
@@ -71,7 +83,7 @@ export default function EditProject() {
         <meta name="description" content="This page is for editing projects" />
       </Helmet>
 
-    <h2 className="subtitle">Editing...</h2> 
+      <h2 className="subtitle">Editing...</h2> 
       <form onSubmit={updateProject} className="editor">
         <input
           type="title"
@@ -111,6 +123,9 @@ export default function EditProject() {
             3.182m0-4.991v4.99" />
         </svg>Update</button>
       </form>
+
+      {/* Display error message if there is an error */}
+      {error && <div className="error_message">{error}</div>}
     </div>
   );
 }
