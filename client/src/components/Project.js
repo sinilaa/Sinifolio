@@ -9,7 +9,7 @@ export default function Project({_id,title,summary,cover}) {
       <div className="image">
         <Link to={`/project/${_id}`}>
           {/* Käytä uutta API-tietoa kutsuissa */}
-          <img src={`${import.meta.env.REACT_APP_API_URL} api/` + cover} alt=""/>
+          <img src={`${process.env.REACT_APP_API_URL} api/` + cover} alt=""/>
         </Link>
       </div>
 
