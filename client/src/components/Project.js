@@ -8,7 +8,7 @@ export default function Project({_id,title,summary,cover}) {
     <div className="project">
       <div className="image">
         <Link to={`/project/${_id}`}>
-          <img src={`${process.env.REACT_APP_API_URL}/api/` + cover} alt=""/>
+          <img src={`${process.env.REACT_APP_API_URL}/api/${cover}`} alt=""/>
         </Link>
       </div>
 
