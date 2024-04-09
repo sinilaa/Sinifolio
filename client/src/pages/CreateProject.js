@@ -28,7 +28,7 @@ export default function CreateProject() {
     data.set('content', content);
     data.set('file', files[0]);
 
-    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/project`, {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/project`, {
       method: 'POST',
       body: data,
       credentials: 'include',

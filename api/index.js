@@ -53,7 +53,7 @@ app.post('/login', async (req, res) => {
 });
 
 // Get user profile (requires authentication)
-app.get('/api/profile', (req, res) => {
+app.get('/profile', (req, res) => {
   // Extract JWT token from cookie
   const { token } = req.cookies;
   // Verify and decode the token to get user information
@@ -65,13 +65,13 @@ app.get('/api/profile', (req, res) => {
 });
 
 // User logout
-app.post('/api/logout', (req, res) => {
+app.post('/logout', (req, res) => {
   // Clear JWT token from cookie and respond with success message
   res.cookie('token', '').json('ok');
 });
 
 // Create new project (requires authentication and file upload)
-app.post('/api/project', uploadMiddleware.single('file'), async (req, res) => {
+app.post('/project', uploadMiddleware.single('file'), async (req, res) => {
   // Extract file information and user information from request
   const { originalname, path } = req.file;
   const parts = originalname.split('.');
@@ -98,7 +98,7 @@ app.post('/api/project', uploadMiddleware.single('file'), async (req, res) => {
 });
 
 // Update project (requires authentication and file upload)
-app.put('/api/project', uploadMiddleware.single('file'), async (req, res) => {
+app.put('/project', uploadMiddleware.single('file'), async (req, res) => {
   let newPath = null;
   if (req.file) {
     // Rename and save uploaded file with new path
@@ -135,7 +135,7 @@ app.put('/api/project', uploadMiddleware.single('file'), async (req, res) => {
 });
 
 // Get all projects
-app.get('/api/project', async (req, res) => {
+app.get('/project', async (req, res) => {
   // Retrieve all projects from the database, populate author details, and sort by creation date
   res.json(
     await Project.find()
@@ -145,7 +145,7 @@ app.get('/api/project', async (req, res) => {
 });
 
 // Get single project by ID
-app.get('/api/project/:id', async (req, res) => {
+app.get('/project/:id', async (req, res) => {
   // Extract project ID from request parameters
   const { id } = req.params;
   // Find and populate project details with author information
@@ -154,7 +154,7 @@ app.get('/api/project/:id', async (req, res) => {
 });
 
 // Delete project by ID
-app.delete('/api/project/:id', async (req, res) => {
+app.delete('/project/:id', async (req, res) => {
   // Extract project ID from request parameters
   const { id } = req.params;
   try {
@@ -171,7 +171,7 @@ app.delete('/api/project/:id', async (req, res) => {
 });
 
 // Fetch EmailJS configuration from environment variables
-app.get('/api/emailjs/config', (req, res) => {
+app.get('/emailjs/config', (req, res) => {
   // Construct EmailJS configuration object from environment variables
   const emailjsConfig = {
     service_id: process.env.EMAILJS_SERVICE_ID,

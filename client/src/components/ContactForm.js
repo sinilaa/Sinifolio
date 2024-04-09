@@ -7,7 +7,7 @@ export default function ContactForm() {
 
   useEffect(() => {
     // Fetch EmailJS configuration from the API
-    fetch(`${process.env.REACT_APP_API_URL}/api/emailjs/config`)
+    fetch(`${process.env.REACT_APP_API_URL}/emailjs/config`)
       .then(response => response.json())
       .then(data => {
         setEmailjsConfig(data); // Set Emailjs configuration data

@@ -18,7 +18,7 @@ export default function ProjectPage() {
   // Function to fetch project information
   async function fetchProjectInfo() {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/project/${id}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/project/${id}`);
       if (!response.ok) {
         throw new Error('Error fetching project information');
       }
@@ -32,7 +32,7 @@ export default function ProjectPage() {
   // Function to handle project deletion
   async function handleDelete() {
     try {
-      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/project/${id}`, {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/project/${id}`, {
         method: 'DELETE',
         credentials: 'include',
       });
