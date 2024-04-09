@@ -9,7 +9,7 @@ export default function ProjectsPage() {
 
   // Fetch projects data on component mount
   useEffect(() => {
-    fetch(`${import.meta.env.REACT_APP_API_URL}/project`)
+    fetch(`${import.meta.env.REACT_APP_API_URL}/api/project`)
       .then(response => {
         response.json().then(projects => {
           setProjects(projects); // Update projects state with fetched data
