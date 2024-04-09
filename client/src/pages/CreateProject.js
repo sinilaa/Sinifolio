@@ -40,7 +40,7 @@ export default function CreateProject() {
 
   // Redirect to projects page if redirect state is true
   if (redirect) {
-    return <Navigate to={'/api/projects'} />;
+    return <Navigate to={'/projects'} />;
   }
 
   // Render form for creating a new project
