@@ -30,7 +30,7 @@ mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTop
 const secret = process.env.TOKEN_SECRET;
 
 // User login
-app.post('/api/login', async (req, res) => {
+app.post('/login', async (req, res) => {
   // Extract username and password from request body
   const { username, password } = req.body;
   // Find user in database based on username
