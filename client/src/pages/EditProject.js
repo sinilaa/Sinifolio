@@ -21,7 +21,7 @@ export default function EditProject() {
   // Function to fetch project information
   async function fetchProjectInfo() {
     try {
-      const response = await fetch(`http://localhost:4000/project/${id}`);
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/project/${id}`);
       const projectInfo = await response.json();
       setTitle(projectInfo.title);
       setContent(projectInfo.content);
@@ -52,7 +52,7 @@ export default function EditProject() {
     }
 
     try {
-      const response = await fetch('http://localhost:4000/project', {
+      const response = await fetch(`${process.env.REACT_APP_API_URL}/api/project`, {
         method: 'PUT',
         body: data,
         credentials: 'include',
@@ -72,7 +72,7 @@ export default function EditProject() {
 
   // Redirect to project page if redirect state is true
   if (redirect) {
-    return <Navigate to={`/project/${id}`} />;
+    return <Navigate to={`/api/project/${id}`} />;
   }
 
   // Render form using the Editor component for updating project

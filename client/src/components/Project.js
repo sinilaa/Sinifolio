@@ -7,14 +7,13 @@ export default function Project({_id,title,summary,cover}) {
   return (
     <div className="project">
       <div className="image">
-        <Link to={`/project/${_id}`}>
-          {/* Käytä uutta API-tietoa kutsuissa */}
-          <img src={`${process.env.REACT_APP_API_URL} api/` + cover} alt=""/>
+        <Link to={`/api/project/${_id}`}>
+          <img src={`${process.env.REACT_APP_API_URL}/api/` + cover} alt=""/>
         </Link>
       </div>
 
       <div className="texts">
-        <Link to={`/project/${_id}`}>
+        <Link to={`api/project/${_id}`}>
           <h2 className="subtitle">{title}</h2>
         </Link>
           <p className="summary">{summary}</p>
