@@ -12,6 +12,8 @@ import ContactPage from './pages/ContactPage';
 import AboutPage from './pages/AboutPage';
 import HomePage from './pages/HomePage';
 
+export const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:4000';
+
 function App() {
   return (
     // Providing UserContext using UserContextProvider

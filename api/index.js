@@ -15,7 +15,7 @@ dotenv.config();
 const uploadMiddleware = multer({ dest: 'uploads/' });
 
 // Add CORS middleware and specify allowed origins
-app.use(cors({ credentials: true, origin: 'http://localhost:3000' }));
+app.use(cors({ credentials: true, origin: ['http://localhost:3000', 'https://sinifolio.onrender.com'] }));
 // Parse request body to JSON
 app.use(express.json());
 // Handle cookies
@@ -181,9 +181,10 @@ app.get('/api/emailjs/config', (req, res) => {
   res.json(emailjsConfig);
 });
 
-const PORT = process.env.PORT || 4000;
-app.listen(PORT, () => {
-  console.log(`Server listening on port ${PORT}`);
+const port = process.env.PORT || 4000;
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
 
 module.exports = app;
