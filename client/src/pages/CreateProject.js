@@ -28,7 +28,7 @@ export default function CreateProject() {
     data.set('content', content);
     data.set('file', files[0]);
 
-    const response = await fetch('http://localhost:4000/project', {
+    const response = await fetch(`${process.env.REACT_APP_API_URL}/api/project`, {
       method: 'POST',
       body: data,
       credentials: 'include',
@@ -40,7 +40,7 @@ export default function CreateProject() {
 
   // Redirect to projects page if redirect state is true
   if (redirect) {
-    return <Navigate to={'/projects'} />;
+    return <Navigate to={'/api/projects'} />;
   }
 
   // Render form for creating a new project

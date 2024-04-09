@@ -38,7 +38,7 @@ export default function ProjectPage() {
       });
       if (response.ok) {
         // Project deletion successful, navigate back to projects page
-        navigate('/projects');
+        navigate('/api/projects');
       } else {
         console.error('Project deletion failed');
       }
@@ -62,7 +62,7 @@ export default function ProjectPage() {
       {/* Edit and delete buttons for authorized user only */}
       {userInfo.id === projectInfo.author._id && (
         <div className="edit_row">
-          <Link className="edit_btn" to={`/edit/${projectInfo._id}`}>
+          <Link className="edit_btn" to={`/api/edit/${projectInfo._id}`}>
             <svg xmlns="http://www.w3.org/2000/svg" 
               fill="none" 
               viewBox="0 0 24 24" 
