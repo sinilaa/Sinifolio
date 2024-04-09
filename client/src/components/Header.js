@@ -23,7 +23,7 @@ export default function Header() {
 
   // Fetch user profile information on component mount
   useEffect(() => {
-    fetch(`${process.env.REACT_APP_API_URL}/profile`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/profile`, {
       credentials: 'include',
     }).then(response => {
       response.json().then(userInfo => {
@@ -34,7 +34,7 @@ export default function Header() {
 
   // Function to handle user logout
   function logout() {
-    fetch(`${process.env.REACT_APP_API_URL}/logout`, {
+    fetch(`${process.env.REACT_APP_API_URL}/api/logout`, {
       credentials: 'include',
       method: 'POST',
     }).then(() => {
