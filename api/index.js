@@ -24,7 +24,7 @@ app.use(cookieParser());
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
 // Connect to MongoDB database using environment variable for URI
-mongoose.connect(process.env.MONGODB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 
 // Hashing salt for bcrypt and JWT secret
 const secret = process.env.TOKEN_SECRET;
