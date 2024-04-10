@@ -11,6 +11,7 @@ export default function CreateProject() {
   const [content, setContent] = useState('');
   const [files, setFiles] = useState('');
   const [redirect, setRedirect] = useState(false);
+  const [error, setError] = useState('');
 
   // Function to handle creation of a new project
   async function createNewProject(ev) {
@@ -18,7 +19,7 @@ export default function CreateProject() {
 
     // Check that all required fields are filled
     if (!title || !summary || !content || !files) {
-      alert('Please fill in all required fields (title, summary, content and file)');
+      setError('Please fill in all required fields (title, summary, content and file)');
       return;
     }
 
@@ -35,6 +36,8 @@ export default function CreateProject() {
     });
     if (response.ok) {
       setRedirect(true); // Redirect to home page after successful creation
+    } else {
+      setError('Failed to create project. Please try again later.');
     }
   }
 
@@ -51,7 +54,7 @@ export default function CreateProject() {
         <meta name="description" content="This page is for creating new projects" />
       </Helmet>
 
-    <h2 className="subtitle">Create new project!</h2>    
+      <h2 className="subtitle">Create new project!</h2>    
       <form onSubmit={createNewProject} className="editor">
         <input type="title"
           placeholder={'Title'}
@@ -74,6 +77,8 @@ export default function CreateProject() {
         {/* Using custom Editor component for project content */}
         <Editor value={content} onChange={setContent} />
 
+        <div className="error_message">{error}</div> {/* Display error message if project creation fails */}
+        
         <button className="create_btn">
           <svg xmlns="http://www.w3.org/2000/svg" 
             fill="none" 
