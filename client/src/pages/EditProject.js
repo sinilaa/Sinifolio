@@ -72,7 +72,7 @@ export default function EditProject() {
 
   // Redirect to project page if redirect state is true
   if (redirect) {
-    return <Navigate to={`/api/project/${id}`} />;
+    return <Navigate to={`/project/${id}`} />;
   }
 
   // Render form using the Editor component for updating project
