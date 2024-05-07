@@ -23,7 +23,6 @@ app.use(cookieParser());
 // Serve static files
 app.use('/uploads', express.static(__dirname + '/uploads'));
 
-mongoose.set('strictQuery', false);
 // Connect to MongoDB database using environment variable for URI
 mongoose.connect(process.env.MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
 

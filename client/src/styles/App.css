@@ -24,13 +24,13 @@
   --nav-font: 'Syne', sans-serif;
 
   /*========== FONT SIZES ==========*/
-  --body-font-size: 1.3rem;
+  --body-font-size: 1.1rem;
   --title-font-size: 5rem;
-  --subtitle-font-size: 2.3rem;
-  --nav-font-size: 1.2rem;
-  --btn-font-size: 1.8rem;
-  --main-title-font-size: 5.2rem;
-  --main-subtitle-font-size: 1.4rem;
+  --subtitle-font-size: 2rem;
+  --nav-font-size: 1.1rem;
+  --btn-font-size: 1.7rem;
+  --main-title-font-size: 5rem;
+  --main-subtitle-font-size: 1.2rem;
 
   /*========== FONT WEIGHTS ==========*/
   --body-font-weight: 400;
@@ -42,7 +42,7 @@
 /* RESPONSIVE FOR SMALL DEVICES */
 @media screen and (max-width: 330px) {
   :root {
-    --body-font-size: 1rem;
+    --body-font-size: 0.9rem;
     --title-font-size: 1.8rem;
     --subtitle-font-size: 1.4rem;
     --main-title-font-size: 2rem;
@@ -51,7 +51,7 @@
 }
 @media screen and (max-width: 660px) and (min-width: 331px) {
   :root {
-    --body-font-size: 1.1rem;
+    --body-font-size: 1rem;
     --title-font-size: 3rem;
     --subtitle-font-size: 1.8rem;
     --main-title-font-size: 3.3rem;
@@ -296,7 +296,7 @@ header {
   color: var(--body-color);
   font-family: var(--extra-font);
   font-weight: var(--subtitle-font-weight);
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   padding: 1.5rem;
   margin-right: 0.8rem;
   margin-bottom: 0.8rem;
@@ -423,7 +423,7 @@ max-height: 1200px;
 .contact_form {
   margin-top: 5rem;
   width: 100%;
-  max-width: 800px;
+  max-width: 700px;
   justify-content: center;
   align-items: center;
 }
@@ -704,8 +704,8 @@ div.edit_row{
   color: var(--first-color);
   text-decoration: none;
   text-align: left;
-  height: 1.8rem;
-  width: 1.8rem;
+  height: 1.6rem;
+  width: 1.6rem;
   transition: 0.4s;
 }
 
@@ -799,7 +799,7 @@ div.edit_row{
     height: calc(var(--footer-height) - 2rem);
     column-gap: 1.8rem;
   }
-  .footer_link svg {
+  .footer_social svg {
     height: 1.4rem;
   }
 }
@@ -831,6 +831,10 @@ div.edit_row{
 
 /* RESPONSIVE FOR LARGE DEVICES */
 @media screen and (min-width: 1024px) {
+  .container {
+    padding-right: 5rem;
+    padding-left: 5rem;
+  }
   p {
     line-height: 2rem;
   }  
