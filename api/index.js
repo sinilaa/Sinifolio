@@ -58,8 +58,12 @@ app.get('/profile', (req, res) => {
   const { token } = req.cookies;
   // Verify and decode the token to get user information
   jwt.verify(token, secret, {}, (err, info) => {
-    if (err) throw err;
-    // Respond with user information
+    if (err) {
+      // Virheenkäsittely, jos JWT-tarkistus epäonnistuu
+      console.error('JWT verification failed:', err);
+      return res.status(401).json({ error: 'Unauthorized' }); // Vastaa HTTP 401 Unauthorized -virheellä
+    }
+    // Jos JWT-tarkistus onnistuu, vastaa käyttäjän tiedoilla
     res.json(info);
   });
 });
