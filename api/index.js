@@ -86,7 +86,11 @@ app.post('/project', uploadMiddleware.single('file'), async (req, res) => {
   // Extract user information from JWT token
   const { token } = req.cookies;
   jwt.verify(token, secret, {}, async (err, info) => {
-    if (err) throw err;
+    if (err) {
+      // Virheenkäsittely, jos JWT-tarkistus epäonnistuu
+      console.error('JWT verification failed:', err);
+      return res.status(401).json({ error: 'Unauthorized' }); // Vastaa HTTP 401 Unauthorized -virheellä
+    }
     // Extract project information from request body
     const { title, summary, content } = req.body;
     // Create a new project in the database with file path and author information
