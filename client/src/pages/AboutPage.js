@@ -13,7 +13,7 @@ export default function AboutPage() {
       <div className="introduction">
         <div className="introduction_quote">
           <h1 className="title">About me</h1>
-          <h2 className="subtitle">Hello! I'm Sini! Software developer, IT Engineer student, customer service guru, and overall likeable human being.</h2><br />
+          <h2 className="subtitle">Hi! I'm Sini! Software developer, IT Engineer student, customer service guru, and overall likeable human being.</h2><br />
         </div>
         <img src="/assets/sinilaamanen.jpg" alt="Sini Laamanen" className="profile_img" width="420" height="560"></img>
       </div>
@@ -50,15 +50,13 @@ export default function AboutPage() {
 
           <div className="skills_column_text">
             <div className="skills_text">
-            <p>I hold a degree in Software Development, specializing in Web Development, and I am currently studying to become an Information Technology Engineer. My studies, combined with personal interest, have strengthened my technical expertise across multiple areas, especially frontend and backend web development.<br /><br />
-
-            <strong>Programming Languages & Technologies:</strong> HTML, CSS, JavaScript, Python, C#<br />
+            <p>
+            <strong>Programming Languages & Technologies:</strong> HTML, CSS, JavaScript, Python<br />
             <strong>Frameworks & Libraries:</strong> React, Express, Node<br />
             <strong>Databases & CMS:</strong> MongoDB, SQL, WordPress<br />
             <strong>CMS:</strong>WordPress<br />
             <strong>Version Control & Tools:</strong> Git/GitHub, Figma, Canva, Jira, Trello, Microsoft Office<br />
             <strong>Methods:</strong> Agile practices, especially Scrum<br /><br />
-
             My skills also include problem-solving, visual design sense, communication, and analytical thinking. Alongside my technical expertise, I bring extensive customer service experience, including roles as a manager and team leader. And no matter where I go, I always bring my outgoing and positive personality with me!
             </p>
 
@@ -69,9 +67,11 @@ export default function AboutPage() {
 
       <div className="experience">
         <h1 className="title">Experience</h1>
-        <p>- Vocational Qualification in Information and Communications Technology, Software Developer (Web Development)<br />
-        - Bachelor of Engineering in Information and Communications Technology (ongoing), Oulu University of Applied Sciences<br />
-        - Extensive customer service and sales experience as Store Manager, Salesperson, and Practical Nurse
+        <p>- Vocational Qualification in Information and Communications Technology,<br />
+        <strong>Software Developer (Web Development)</strong>, Taitotalo, Helsinki<br />
+        - <strong>Bachelor of Engineering in Information and Communications Technology</strong> (ongoing),<br />
+        Oulu University of Applied Sciences<br />
+        - Extensive <strong>customer service</strong> and <strong>sales</strong> experience as Store Manager, Salesperson, and Practical Nurse
         
         <br /><br />You can find more information about my work experience and education in my CV. You can open and download it by clicking the button below.</p>
 
