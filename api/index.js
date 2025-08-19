@@ -71,7 +71,7 @@ app.get('/profile', (req, res) => {
 // User logout
 app.post('/logout', (req, res) => {
   // Clear JWT token from cookie and respond with success message
-  res.cookie('token', '').json('ok');
+  res.cookie('token', '').json('Logged out successfully');
 });
 
 // Create new project (requires authentication and file upload)

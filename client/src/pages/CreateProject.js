@@ -1,11 +1,12 @@
-import 'react-quill/dist/quill.snow.css';
-import { useState } from "react";
+import { useState, useRef} from "react";
 import { Navigate } from "react-router-dom";
 import { Helmet } from 'react-helmet';
 import Editor from "../components/Editor";
 
 // Component for creating a new project
 export default function CreateProject() {
+  const quillRef = useRef();
+
   const [title, setTitle] = useState('');
   const [summary, setSummary] = useState('');
   const [content, setContent] = useState('');
@@ -18,7 +19,7 @@ export default function CreateProject() {
     ev.preventDefault();
 
     // Check that all required fields are filled
-    if (!title || !summary || !content || !files) {
+    if (!title || !summary || !files) {
       setError('Please fill in all required fields (title, summary, content and file)');
       return;
     }
@@ -75,7 +76,8 @@ export default function CreateProject() {
         />
 
         {/* Using custom Editor component for project content */}
-        <Editor value={content} onChange={setContent} />
+        <Editor
+        ref={quillRef} />
 
         <div className="error_message">{error}</div> {/* Display error message if project creation fails */}
         
