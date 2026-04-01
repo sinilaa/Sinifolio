@@ -13,11 +13,7 @@ export default function ContactPage() {
 
     <h1 className="title">Contact</h1>
       <div className="contact_information">
-        <p>Here is information how to contact me. 
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. 
-        Autem deserunt accusantium dolorum molestiae enim. 
-        Iusto rerum cumque harum ex cum ipsam eos earum fuga repudiandae commodi. 
-        Similique dolores deserunt rerum.</p><br /><br />
+        <p>Whether you have a project in mind, a question, or just want to say hi, feel free to reach me out via email, phone, or the contact form below. Hope I hear from ya!</p><br /><br />
         <p><span className="contact_info">Email</span> emilia.laamanen@gmail.com</p><br />
         <p><span className="contact_info">Mobile</span> 050 466 6751</p>
         

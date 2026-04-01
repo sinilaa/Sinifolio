@@ -21,11 +21,11 @@ export default function AboutPage() {
         <div className="introduction_text">
         <p>I have always been fascinated by the continuous advancement of technology and its vast potential to improve the world and make life a little better. This passion and curiosity for development eventually led me, after years of trying different professions and searching for myself, to take the leap and join a team of developers to help make the world a better place.<br /><br />
 
-        What excites me most about being a Software Developer is the opportunity to create solutions that have a real impact, solve everyday problems, and help people. Whether it's simplifying daily tasks, facilitating social interactions, or enhancing health and security, understanding customer needs is crucial. Identifying the right problems to solve, quickly delivering solutions, learning from them, and continuously improving over time is the key to great development. Whether it’s a major change or a small improvement, I approach every project with care, focusing on how I can help or inspire others through my work.<br /><br />
+        What excites me most about being a Software Developer is the opportunity to create solutions that make a real impact, solve everyday problems, and help people. Whether it’s simplifying daily tasks, facilitating social interactions, or enhancing health and security, every contribution matters. Big or small, I approach every project with care, always focusing on how I can help and inspire others through my work.<br /><br />
 
         Besides handling software development from start to finish, both frontend and backend, I also love using my creativity and keen eye for detail. UX/UI design, improving usability and accessibility, and ensuring quality are some of my favorite aspects of development. And of course, I’m always passionate about learning new things and improving myself further.<br /><br />
 
-        I am deeply passionate about development, and I see it as my calling. I look forward to learning more through diverse projects and collaborating with people who share the same passion as me!</p>
+        I am deeply passionate about what I do, and I look forward to learning more through diverse projects and collaborating with people who share the same passion as me!</p>
 
       </div>
 
@@ -38,6 +38,8 @@ export default function AboutPage() {
               <div class="skill_name">CSS</div>
               <div class="skill_name">JavaScript</div>
               <div class="skill_name">React</div>
+              <div class="skill_name">C/C++</div>
+              <div class="skill_name">Python</div>
               <div class="skill_name">Node</div>
               <div class="skill_name">WordPress</div>
               <div class="skill_name">SQL</div>
@@ -51,13 +53,13 @@ export default function AboutPage() {
           <div className="skills_column_text">
             <div className="skills_text">
             <p>
-            <strong>Programming Languages & Technologies:</strong> HTML, CSS, JavaScript, Python<br />
+            I have acquired basic knowledge of various languages and technologies through studies and self-learning. On top of that, I bring a good eye for visual design, strong communication skills, and experience leading and managing people — all with a great and sunny personality! <br /><br />
+            <strong>Programming Languages:</strong> HTML, CSS, JavaScript, Python, C/C++<br />
             <strong>Frameworks & Libraries:</strong> React, Express, Node<br />
-            <strong>Databases & CMS:</strong> MongoDB, SQL, WordPress<br />
-            <strong>CMS:</strong>WordPress<br />
+            <strong>Databases:</strong> MongoDB and SQL<br />
+            <strong>CMS:</strong> WordPress<br />
             <strong>Version Control & Tools:</strong> Git/GitHub, Figma, Canva, Jira, Trello, Microsoft Office<br />
-            <strong>Methods:</strong> Agile practices, especially Scrum<br /><br />
-            My skills also include problem-solving, visual design sense, communication, and analytical thinking. Alongside my technical expertise, I bring extensive customer service experience, including roles as a manager and team leader. And no matter where I go, I always bring my outgoing and positive personality with me!
+            <strong>Methods:</strong> Agile practices, especially Scrum
             </p>
 
             </div>
@@ -67,11 +69,11 @@ export default function AboutPage() {
 
       <div className="experience">
         <h1 className="title">Experience</h1>
-        <p>- Vocational Qualification in Information and Communications Technology,<br />
-        <strong>Software Developer (Web Development)</strong>, Taitotalo, Helsinki<br />
+        <p>- <strong>Software Developer (Web Development)</strong>, Taitotalo, Helsinki<br />
         - <strong>Bachelor of Engineering in Information and Communications Technology</strong> (ongoing),<br />
         Oulu University of Applied Sciences<br />
-        - Extensive <strong>customer service</strong> and <strong>sales</strong> experience as Store Manager, Salesperson, and Practical Nurse
+        - Extensive experience in <strong>customer service</strong>, <strong>sales</strong> and <strong>leadership</strong> as a Store Manager and Salesperson<br />
+        - Experience in <strong>Health</strong> and<strong> well-being</strong> as a Practical Nurse
         
         <br /><br />You can find more information about my work experience and education in my CV. You can open and download it by clicking the button below.</p>
 
