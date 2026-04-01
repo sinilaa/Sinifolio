@@ -18,7 +18,7 @@ export default function HomePage() {
           </h1>
 
           <h2>
-            Passionate about front-end development,<br />
+            Passionate about software development,<br />
             UX/UI design and learning new stuff.<br /><br />
             PS. Please note that this portfolio is still in the process,<br /> 
             so it's not even nearly perfect and some information is still missing.<br />
